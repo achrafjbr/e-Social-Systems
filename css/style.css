@@ -9,11 +9,12 @@
   --secondary-color: #ededed;
   --primary-font-color: #374151;
   --secondary-font-color: #1f2937;
-  --decorative-color:#0062ff
+  --decorative-color: #0062ff;
+  --card-color: #d8e7fc;
 }
 
 body {
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   background-color: var(--secondary-color);
 }
 
@@ -62,28 +63,131 @@ body {
   cursor: pointer;
 }
 
-.tab.activated{
+.tab.activated {
   color: var(--decorative-color);
 }
 
-.tab:has(img, p):hover{
-    color: var(--decorative-color);
+.tab:has(img, p):hover {
+  color: var(--decorative-color);
 }
 
-.screens{
-    padding: 1.5rem;
-    margin: 1rem;
-    border-radius: 10px;
-    background-color: var(--primary-color);
-    height: 90vh;
-    box-shadow: 5px 5px 5px 3px rgba(197, 197, 197, 0.3), -5px -5px 5px 3px rgba(197, 197, 197, 0.3);
+.screens {
+  padding: 1.5rem;
+  margin: 1rem;
+  border-radius: 10px;
+  background-color: var(--primary-color);
+  height: 90%;
+  box-shadow:
+    5px 5px 5px 3px rgba(197, 197, 197, 0.3),
+    -5px -5px 5px 3px rgba(197, 197, 197, 0.3);
 }
 
 /* Diplay & Hide any screen by clicking on the target one*/
-.screens .screen{
-    display: none;
+.screens .screen {
+  display: none;
 }
 
-.screens .screen.activated{
-    display: block;
+.screens .screen.activated {
+  display: block;
+}
+
+/* Declaration Screen Content*/
+.declaration .title {
+  font-family: popines;
+  font-size: 1.5rem;
+}
+
+.content {
+  padding: 1rem 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/* Declaration form */
+.content .left-part {
+  width: 30%;
+
+  background-color: var(--card-color);
+  border-radius: 5px;
+  padding: 1rem 1rem;
+
+  #declaration_form {
+    padding: 2rem 0;
+
+    #employeur-selection,
+    #annee-mois,
+    #declaration-date {
+      font-size: 0.9rem;
+      font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      text-align: center;
+      padding: 0.5rem;
+      margin: 0.5rem;
+      width: 100%;
+      margin: 10px auto;
+      border: 1px solid;
+      border-radius: 5px;
+    }
+
+    #employeur-selection,
+    #annee-mois,
+    #declaration-date :focus {
+      border: 1px solid var(--decorative-color);
+    }
+
+    .save_employeur {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      margin-top: 2rem;
+      width: 80%;
+      background: var(--decorative-color);
+      margin: 0 auto;
+      text-align: center;
+      border-radius: 10px;
+      padding: 20px;
+      color: var(--primary-color);
+      cursor: pointer;
+    }
+
+    .save_employeur .btn_icon img {
+      width: 1.2rem;
+      height: 1.2rem;
+      text-align: center;
+      margin: auto;
+    }
+  }
+}
+
+/* Declaration table which holds the 'Declarations' of employers */
+
+.content .right-part {
+  width: 70%;
+  border-radius: 5px;
+  padding: 1rem 1rem;
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 0.6rem;
+  }
+
+  td,
+  th {
+    border: 2px solid #dddddd;
+    padding: 8px;
+  }
+  th {
+    text-align: center;
+  }
+  td.isNotAjour {
+    color: rgb(255, 68, 68);
+    background-color: rgb(255, 158, 192);
+  }
+  td.isAjour {
+    color: rgb(54, 255, 54);
+    background-color: #dcfce7;
+  }
 }
