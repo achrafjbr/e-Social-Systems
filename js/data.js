@@ -321,3 +321,12 @@ let employeeCotisation = [
     employeeId: 6,
   },
 ];
+
+export  {
+  Sector,
+  employeur,
+  employeurCotisation,
+  employee,
+  employeeCotisation,
+  declaration
+}
