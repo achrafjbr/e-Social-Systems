@@ -11,106 +11,35 @@
     <div class="app">
       <div class="header"><imag src="Caisse_Nationale_de_Sécurité_Sociale__1_-removebg-preview.png"></div>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="css/style.css" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css">
-  <title>E-Social System</title>
-
-  <style>
-    input {
-      background-color: white;
-    }
-  </style>
-</head>
-
-<body>
-  <div class="app">
-    <div class="header">LOGO</div>
-
-    <div class="tabs">
-      <div class="tab 0 activated">
-        <img src="./images/icons/employeurs.png" class="icon" alt="" />
-        <p class="title">Employeurs</p>
-        <p></p>
-      </div>
-      <div class="tab 1">
-        <img src="./images/icons/employés.png" class="icon" alt="" />
-        <p class="title">Employés</p>
-      </div>
-      <div class="tab 2">
-        <img src="./images/icons/declaration.png" class="icon" alt="" />
-        <p class="title">Declaration</p>
-      </div>
-      <div class="tab 3">
-        <img src="./images/icons/calculateur.png" class="icon" alt="" />
-        <p class="title">Calculation</p>
-      </div>
-      <div class="tab 4">
-        <img src="./images/icons/statistiques.png" class="icon" alt="" />
-        <p class="title">Statistiques</p>
-      </div>
-      <div class="tab 5">
-        <img src="./images/icons/historique.png" class="icon" alt="" />
-        <p class="title">Historique</p>
-      </div>
-      <div class="tab 6">
-        <img src="./images/icons/Anomalies.png" class="icon" alt="" />
-        <p class="title">Anomalies</p>
-      </div>
-    </div>
-
-    <div class="screens">
-      <!-- hiba start -->
-      <div class="screen employeur activated">
-        <!-- section form start -->
-        <div class="employeur">
-          <div class="left">
-            <form>
-              <h2 class="form-title">Employeurs</h2>
-              <div class="formulaire">
-                <label>Employeur</label>
-                <input id="employeur" type="text" />
-              </div>
-              <div class="formulaire">
-                <label>Sociale</label>
-                <input id="employeur" type="text" />
-              </div>
-              <div class="formulaire">
-                <label>Secteur</label>
-                <input id="employeur" type="text" />
-              </div>
-              <div>
-                <button class="btn" type="submit">Entrer</button>
-              </div>
-            </form>
-          </div>
-          <!-- section form ends -->
-          <!-- section table start -->
-          <div class="right">
-            <h2 class="table-title">Liste Des Employeurs</h2>
-            <div>
-              <table>
-                <thead>
-                  <tr>
-                    <th>Employeur</th>
-                    <th>Raison Sociale</th>
-                    <th>Secteur</th>
-                    <th>Employes</th>
-                    <th>Actions</th>
-                  </tr>
-                </thead>
-              </table>
-            </div>
-          </div>
+      <div class="tabs">
+        <div class="tab 0 activated">
+          <img src="./images/icons/employeurs.png" class="icon" alt="" />
+          <p class="title">Employeurs<p>
         </div>
-        <!-- section table ends -->
-      </div>
-      <!-- hiba ends -->
-      <div class="screen assures">
-        <h1>assures</h1>
+        <div class="tab 1">
+          <img src="./images/icons/employés.png" class="icon" alt="" />
+          <p class="title">Employés</p>
+        </div>
+        <div class="tab 2">
+          <img src="./images/icons/declaration.png" class="icon" alt="" />
+          <p class="title">Declaration</p>
+        </div>
+        <div class="tab 3">
+          <img src="./images/icons/calculateur.png" class="icon" alt="" />
+          <p class="title">Calculation</p>
+        </div>
+        <div class="tab 4">
+          <img src="./images/icons/statistiques.png" class="icon" alt="" />
+          <p class="title">Statistiques</p>
+        </div>
+        <div class="tab 5">
+          <img src="./images/icons/historique.png" class="icon" alt="" />
+          <p class="title">Historique</p>
+        </div>
+        <div class="tab 6">
+          <img src="./images/icons/Anomalies.png" class="icon" alt="" />
+          <p class="title">Anomalies</p>
+        </div>
       </div>
 
       <div class="screens">
@@ -195,221 +124,15 @@
         </div>
 
         <div class="screen declaration">
-          <h4 class="title">Déclaration mensuelle des salaires</h4>
-          <div class="content">
-            <div class="left-part">
-              <p class="content_title">Nouvelle déclaration</p>
-
-              <form id="declaration_form">
-                <div class="employeur-selection">
-                  <h5>Employeur</h5>
-                  <select name="employeur" id="employeur-selection">
-                    <option value="tech solution">Tech Solution</option>
-                    <option value="agr service">Arg Service</option>
-                    <option value="small prod">Small Prod</option>
-                  </select>
-                </div>
-
-                <div class="mois_date">
-                  <h5>Mois/Année</h5>
-                  <input type="month" name="" id="annee-mois" />
-                </div>
-
-                <div class="declaration_date">
-                  <h5>Date de déclaration</h5>
-                  <input type="date" name="" id="declaration-date" />
-                </div>
-
-                <div class="save_employeur">
-                  <span class="btn_icon"
-                    ><img src="./images/icons/submit.png" alt=""
-                  /></span>
-                  <span><h6>Soumettre la déclaration</h6></span>
-                </div>
-              </form>
-            </div>
-
-            <div class="right-part">
-              <p class="content_title">Historique des déclarations</p>
-              <table>
-                <tr>
-                  <th>Employeur</th>
-                  <th>Mois/Année</th>
-                  <th>Date déclaration</th>
-                  <th>Statut</th>
-                  <th>Total à payer</th>
-                </tr>
-
-                <tr>
-                  <td>Tech Solutions SA</td>
-                  <td>2023-10</td>
-                  <td>2023-10-15</td>
-                  <td class="isAjour">À jour</td>
-                  <td>1260 DH</td>
-                </tr>
-
-                <tr>
-                  <td>Santé Plus Clinic</td>
-                  <td>2023-10</td>
-                  <td>2023-10-20</td>
-                  <td class="isNotAjour">Pas à jour</td>
-                  <td>1953 DH</td>
-                </tr>
-
-      
-              </table>
-            </div>
-          </div>
+          <h1>declaration</h1>
         </div>
 
-      <div class="screen calculateur">
-        <h1>calculateur</h1>
-      </div>
-
-      <div class="screen statistique">
-        <!--  start statistiques -->
-        <div class="flex flex-col">
-          <h1 class="font-bold mb-4 text-2xl">Statistiques globales</h1>
-          <div class="flex flex-row justify-center items-center  ">
-            <div class="flex flex-wrap gap-6   ">
-              <!-- start statistique card -->
-              <div class="flex flex-row bg-white border-[1px] rounded-lg h-24 w-64 gap-6 justify-center shadow-sm   ">
-                <div class="flex flex-row gap-2 mt-4 ">
-                  <div class="bg-blue-100 w-10 h-14 rounded-md flex items-center justify-center">
-                    <i class="ri-community-line text-3xl text-blue-700  "></i>
-                  </div>
-                  <div class="ml-5">
-                    <p>Employeur energistree</p>
-                    <p>15</p>
-                  </div>
-                </div>
-
-              </div>
-              <div class="flex flex-row bg-white border-[1px] rounded-lg h-24 w-64 gap-6 justify-center shadow-sm   ">
-                <div class="flex flex-row gap-2 mt-4 ">
-                  <div class="bg-green-100 w-14 h-14 rounded-md flex items-center justify-center">
-                    <i class="ri-team-fill text-2xl text-green-700"></i>
-                  </div>
-                  <div class="ml-5">
-                    <p>Assurés enregistrés</p>
-                    <p>5</p>
-                  </div>
-                </div>
-
-              </div>
-              <div class="flex flex-row bg-white border-[1px] rounded-lg h-24 w-64 gap-6 justify-center shadow-sm   ">
-                <div class="flex flex-row gap-2 mt-4 ">
-                  <div class="bg-purple-100 w-10 h-14 rounded-md flex items-center justify-center">
-                    <i class="ri-coins-line text-3xl text-purple-700"></i>
-                  </div>
-                  <div class="ml-5">
-                    <p>Cotisations totales</p>
-                    <p>15</p>
-                  </div>
-                </div>
-
-              </div>
-              <div class="flex flex-row bg-white border-[1px] rounded-lg h-24 w-64 gap-6 justify-center shadow-sm   ">
-                <div class="flex flex-row gap-2 mt-4 ">
-                  <div class="bg-yellow-100 w-10 h-14 rounded-md flex items-center justify-center">
-                    <i class="ri-line-chart-line text-3xl text-yellow-700"></i>
-                  </div>
-                  <div class="ml-5">
-                    <p>Salaire moyen</p>
-                    <p>15</p>
-                  </div>
-                </div>
-
-              </div>
-
-
-              <!--end start statistique card -->
-            </div>
-          </div>
-          <div class="flex flex-wrap mt-4 max-h-60 ml-4 ">
-            <div class="p-4  max-h-80 overflow-auto no-scrollbar w-[550px] border-[1px] rounded-lg shadow-md ml-7 ">
-              <h2 class="font-bold mb-2 text-xl ">Répartition des assurés par secteur</h2>
-              <div id="Repartition_content">
-                <div class="flex items-center justify-between p-3 hover:bg-gray-50 rounded-lg">
-                  <div class="flex items-center">
-                    <div class="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center">
-                      <i class="fas fa-building text-blue-600"></i>
-                    </div>
-                    <div class="ml-3">
-                      <h5 class="font-medium text-gray-800">Tech Innovations SARL</h5>
-                      <p class="text-sm text-gray-600">2 employés</p>
-                    </div>
-                  </div>
-                  <div class="text-right">
-                    <p class="font-bold text-gray-800">1.560&nbsp;MAD</p>
-                    <p class="text-xs text-gray-600">Cotisations</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class=" p-4 shadow-md  max-h-80 overflow-auto no-scrollbar w-[550px] border-[1px] rounded-lg shadow-md ml-1">
-              <div id="evolution_content ">
-
-
-                <h2 class="font-bold mb-2 text-xl ">Évolution des cotisations dans le temps</h2>
-                <div class="flex items-center justify-between p-3 hover:bg-gray-50 rounded-lg">
-                  <div>
-                    <h5 class="font-medium text-gray-800">Tech Innovations SARL</h5>
-                    <p class="text-sm text-gray-600">janvier 2026</p>
-                  </div>
-                  <div class="text-right">
-                    <div class="mb-1"><span
-                        class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">Calculé</span></div>
-                    <p class="text-sm text-gray-800">1.560&nbsp;MAD</p>
-                  </div>
-                </div>
-                <div class="flex items-center justify-between p-3 hover:bg-gray-50 rounded-lg">
-                  <div>
-                    <h5 class="font-medium text-gray-800">Tech Innovations SARL</h5>
-                    <p class="text-sm text-gray-600">janvier 2026</p>
-                  </div>
-                  <div class="text-right">
-                    <div class="mb-1"><span
-                        class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">Calculé</span></div>
-                    <p class="text-sm text-gray-800">1.560&nbsp;MAD</p>
-                  </div>
-                </div>
-                <div class="flex items-center justify-between p-3 hover:bg-gray-50 rounded-lg">
-                  <div>
-                    <h5 class="font-medium text-gray-800">Tech Innovations SARL</h5>
-                    <p class="text-sm text-gray-600">janvier 2026</p>
-                  </div>
-                  <div class="text-right">
-                    <div class="mb-1"><span
-                        class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">Calculé</span></div>
-                    <p class="text-sm text-gray-800">1.560&nbsp;MAD</p>
-                  </div>
-                </div>
-                <div class="flex items-center justify-between p-3 hover:bg-gray-50 rounded-lg">
-                  <div>
-                    <h5 class="font-medium text-gray-800">Tech Innovations SARL</h5>
-                    <p class="text-sm text-gray-600">janvier 2026</p>
-                  </div>
-                  <div class="text-right">
-                    <div class="mb-1"><span
-                        class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">Calculé</span></div>
-                    <p class="text-sm text-gray-800">1.560&nbsp;MAD</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!--  end statistiques -->
-
-      
-
-        <!-- <div class="screen calculateur">
+        <div class="screen calculateur">
           <h1>calculateur</h1>
         </div>
 
         <div class="screen statistique">
-          <h1>statistique1</h1>
+          <h1>statistique</h1>
         </div>
 
         <div class="screen historique">
@@ -419,15 +142,14 @@
         <div class="screen anomalies">
           <h1>anomalies</h1>
         </div>
-      </div> -->
+        
+      </div>
 
-      <!-- <div class="footer">
+      <div class="footer">
         <h1>FOOTER</h1>
-      </div> -->
+      </div>
     </div>
 
     <script src="js/app.js" type="module"></script>
-    <script src="js/statistiques.js"></script>
-</body>
-
+  </body>
 </html>
