@@ -195,3 +195,16 @@ td {
   text-align: center;
 }
 /*--hiba end css--*/
+
+
+/* start abderrahman  */
+  .no-scrollbar {
+  scrollbar-width: none;      
+  -ms-overflow-style: none;   
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;              
+}
+
+/* end abderahman */
