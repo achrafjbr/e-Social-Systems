@@ -96,14 +96,18 @@ body {
 }
 .parte1{
   display: flex;
-  justify-content: space-between;
-
+  align-items: center;
+  gap: 6px;
+}
+.serchelement{
+  margin-left: 590px;
 }
 .search-icon{
   font-size: 20px;
   cursor: pointer;
-  margin-right: 203px;
+
 }
+
 
 .insearch{
   width: 200px;
@@ -112,9 +116,10 @@ body {
   background-color: #1D4ED8;
   border: #0062ff 1px solid;
   color: #ffffff;
+  
 }
 .screen.assures  h1{
-  font-size:17;
+  font-size:30px;
   color: #1D4ED8;
  display: flex;
   justify-content: center;
