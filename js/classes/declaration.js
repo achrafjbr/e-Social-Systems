@@ -1,3 +1,8 @@
+import {
+  declaration,
+  Sector
+} from '../data.js'
+
 
 
 class Declaration {
@@ -14,3 +19,18 @@ class Declaration {
   }
 
 }
+
+
+const employeurSelection = document.getElementById('employeur-selection').value;
+const anneeMois = document.getElementById('annee-mois').value;
+const declarationDate = document.getElementById('declaration-date').value;
+
+const saveEmployeurBtn = document.querySelector('.save_employeur')
+
+const addDeclaration = () => {
+  console.log(employeurSelection, anneeMois, declarationDate);
+}
+
+
+saveEmployeurBtn.addEventListener('click', addDeclaration);
+
