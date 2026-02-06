@@ -102,8 +102,12 @@ body {
 .search-icon{
   font-size: 20px;
   cursor: pointer;
-  margin-right: 203px;
+  
 }
+  .serchelement{
+  display: flex;
+  align-items: center;
+  }
 
 .insearch{
   width: 200px;
