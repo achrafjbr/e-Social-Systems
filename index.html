@@ -1,97 +1,107 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/style.css" />
-    <title>E-Social System</title>
-  </head>
-  <body>
-    <div class="app">
-      <div class="header">LOGO</div>
 
-      <div class="tabs">
-        <div class="tab 0 activated">
-          <img src="./images/icons/employeurs.png" class="icon" alt="" />
-          <p class="title">Employeurs</p>
-          <p></p>
-        </div>
-        <div class="tab 1">
-          <img src="./images/icons/employés.png" class="icon" alt="" />
-          <p class="title">Employés</p>
-        </div>
-        <div class="tab 2">
-          <img src="./images/icons/declaration.png" class="icon" alt="" />
-          <p class="title">Declaration</p>
-        </div>
-        <div class="tab 3">
-          <img src="./images/icons/calculateur.png" class="icon" alt="" />
-          <p class="title">Calculation</p>
-        </div>
-        <div class="tab 4">
-          <img src="./images/icons/statistiques.png" class="icon" alt="" />
-          <p class="title">Statistiques</p>
-        </div>
-        <div class="tab 5">
-          <img src="./images/icons/historique.png" class="icon" alt="" />
-          <p class="title">Historique</p>
-        </div>
-        <div class="tab 6">
-          <img src="./images/icons/Anomalies.png" class="icon" alt="" />
-          <p class="title">Anomalies</p>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css">
+  <title>E-Social System</title>
+
+  <style>
+    input {
+      background-color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="app">
+    <div class="header">LOGO</div>
+
+    <div class="tabs">
+      <div class="tab 0 activated">
+        <img src="./images/icons/employeurs.png" class="icon" alt="" />
+        <p class="title">Employeurs</p>
+        <p></p>
       </div>
+      <div class="tab 1">
+        <img src="./images/icons/employés.png" class="icon" alt="" />
+        <p class="title">Employés</p>
+      </div>
+      <div class="tab 2">
+        <img src="./images/icons/declaration.png" class="icon" alt="" />
+        <p class="title">Declaration</p>
+      </div>
+      <div class="tab 3">
+        <img src="./images/icons/calculateur.png" class="icon" alt="" />
+        <p class="title">Calculation</p>
+      </div>
+      <div class="tab 4">
+        <img src="./images/icons/statistiques.png" class="icon" alt="" />
+        <p class="title">Statistiques</p>
+      </div>
+      <div class="tab 5">
+        <img src="./images/icons/historique.png" class="icon" alt="" />
+        <p class="title">Historique</p>
+      </div>
+      <div class="tab 6">
+        <img src="./images/icons/Anomalies.png" class="icon" alt="" />
+        <p class="title">Anomalies</p>
+      </div>
+    </div>
 
-      <div class="screens">
-        <!-- hiba start -->
-        <div class="screen employeur activated">
-          <!-- section form start -->
-          <div class="employeur">
-            <div class="left">
-              <form>
-                <h2 class="form-title">Employeurs</h2>
-                <div class="formulaire">
-                  <label>Employeur</label>
-                  <input id="employeur" type="text" />
-                </div>
-                <div class="formulaire">
-                  <label>Sociale</label>
-                  <input id="employeur" type="text" />
-                </div>
-                <div class="formulaire">
-                  <label>Secteur</label>
-                  <input id="employeur" type="text" />
-                </div>
-                <div>
-                  <button class="btn" type="submit">Entrer</button>
-                </div>
-              </form>
-            </div>
-            <!-- section form ends -->
-            <!-- section table start -->
-            <div class="right">
-              <h2 class="table-title">Liste Des Employeurs</h2>
-              <div>
-                <table>
-                  <thead>
-                    <tr>
-                      <th>Employeur</th>
-                      <th>Raison Sociale</th>
-                      <th>Secteur</th>
-                      <th>Employes</th>
-                      <th>Actions</th>
-                    </tr>
-                  </thead>
-                </table>
+    <div class="screens">
+      <!-- hiba start -->
+      <div class="screen employeur activated">
+        <!-- section form start -->
+        <div class="employeur">
+          <div class="left">
+            <form>
+              <h2 class="form-title">Employeurs</h2>
+              <div class="formulaire">
+                <label>Employeur</label>
+                <input id="employeur" type="text" />
               </div>
+              <div class="formulaire">
+                <label>Sociale</label>
+                <input id="employeur" type="text" />
+              </div>
+              <div class="formulaire">
+                <label>Secteur</label>
+                <input id="employeur" type="text" />
+              </div>
+              <div>
+                <button class="btn" type="submit">Entrer</button>
+              </div>
+            </form>
+          </div>
+          <!-- section form ends -->
+          <!-- section table start -->
+          <div class="right">
+            <h2 class="table-title">Liste Des Employeurs</h2>
+            <div>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Employeur</th>
+                    <th>Raison Sociale</th>
+                    <th>Secteur</th>
+                    <th>Employes</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+              </table>
             </div>
           </div>
-          <!-- section table ends -->
         </div>
-        <!-- hiba ends -->
-        <div class="screen assures">
-          <h1>assures</h1>
-        </div>
+        <!-- section table ends -->
+      </div>
+      <!-- hiba ends -->
+      <div class="screen assures">
+        <h1>assures</h1>
+      </div>
 
         <div class="screen declaration">
           <h4 class="title">Déclaration mensuelle des salaires</h4>
@@ -326,5 +336,7 @@
     </div>
 
     <script src="js/app.js" type="module"></script>
-  </body>
+    <script src="js/statistiques.js"></script>
+</body>
+
 </html>
