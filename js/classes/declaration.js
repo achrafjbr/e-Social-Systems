@@ -1,9 +1,4 @@
-import {
-  declaration,
-  Sector
-} from '../data.js'
-
-
+import { declarations, employeurs } from "../data.js";
 
 class Declaration {
   constructor(id, anneeAndmois, dateDeclaration, enRetard, penalité) {
@@ -14,23 +9,31 @@ class Declaration {
     this.penalité = penalité;
   }
 
-  declare(employeur, declaration){
+  declare(employeur, declaration) {
     employeur.declarationList.push(declaration);
   }
-
 }
 
+const socialSelection = document.getElementById("employeur-selection").value;
 
-const employeurSelection = document.getElementById('employeur-selection').value;
-const anneeMois = document.getElementById('annee-mois').value;
-const declarationDate = document.getElementById('declaration-date').value;
+const anneeMois = document.getElementById("annee-mois");
 
-const saveEmployeurBtn = document.querySelector('.save_employeur')
+const declarationDate = document.getElementById("declaration-date");
+
+const saveEmployeurBtn = document.querySelector(".save_employeur");
 
 const addDeclaration = () => {
-  console.log(employeurSelection, anneeMois, declarationDate);
-}
+  console.log(socialSelection, anneeMois.value, declarationDate.value);
+  // convert input date to js date
+  const date = new Date(anneeMois.value);
+  const decDate = new Date(declarationDate.value);
+  // Get employeur which has this ' employeurSelection '
+  console.log(findEmployeurBySociale(socialSelection));
+  // then add declaration of this employeur
+};
 
+saveEmployeurBtn.addEventListener("click", addDeclaration);
 
-saveEmployeurBtn.addEventListener('click', addDeclaration);
-
+const findEmployeurBySociale = (sociale) => {
+  employeurs.filter((employeur)=> employeur.sociale == sociale);
+};
