@@ -166,6 +166,13 @@ border-radius: 8px;
 cursor:pointer;
 box-shadow:1px 1px 2px #000000;
 }
+#Employer{
+  border:#000000 1px solid;
+  border-radius: 8px;
+  height: 26px;
+  box-shadow: #000000 1px 1px 2px;
+
+}
 /* for table */
 .Liste h2 {
   text-align: center;

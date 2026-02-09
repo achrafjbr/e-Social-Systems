@@ -101,19 +101,27 @@
       </div>
       <!-- hiba ends -->
       <div class="screen assures">
+        <!--employee start-->
         <div class="parte1">
           <h1>Gestion des Employees</h1>
           <div class="serchelement">
-<i class="fa-solid fa-magnifying-glass search-icon"></i><input type="text" class="insearch"
+            <i class="fa-solid fa-magnifying-glass search-icon"></i><input type="text" class="insearch"
             placeholder="Search...">
           </div>
         </div>
         <div class="Employees">
           <form class="Ajoute">
             <h2>Ajoute un assuré </h2>
-            <lable>Nom</lable><input type="text">
-            <lable>Salaire</lable><input type="text">
-            <lable>Employer</lable><input type="text">
+            <label id="Nom">Nom</label><input type="text">
+            <label>Salaire</label><input type="text">
+            <label>Employer</label>
+            <select id="Employer">
+              <option value=""></option>
+              <option value="société">société privée</option>
+              <option value="administration">administration publique</option>
+              <option value="collectivité">collectivité territoriale</option>
+            </select>
+            
             <button class="Ajouter">Ajouter </button>
           </form>
 
@@ -125,29 +133,16 @@
                 <th>Salaire</th>
                 <th>Employer</th>
               </tr>
-              <tr>
-                <td>khadija</td>
-                <td>10000</td>
-                <td>sarl</td>
-              </tr>
-              <tr>
-                <td>adnan</td>
-                <td>20000</td>
-                <td>aram</td>
-              </tr>
-              <tr>
-                <td>adnan</td>
-                <td>20000</td>
-                <td>aram</td>
-              </tr>
-              <!-- <tbody class="tbody">
-</tbody> -->
+            
+             <tbody class="tbody">
+              </tbody> 
 
             </table>
           </form>
         </div>
 
       </div>
+      <!--end employee-->
 
       <div class="screen declaration">
         <h4 class="title">Déclaration mensuelle des salaires</h4>
