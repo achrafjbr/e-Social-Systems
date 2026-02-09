@@ -112,9 +112,11 @@
         <div class="Employees">
           <form class="Ajoute">
             <h2>Ajoute un assuré </h2>
-            <label id="Nom">Nom</label><input type="text">
-            <label>Salaire</label><input type="text">
+
+            <label>Nom</label><input type="text" id="Nom">
+            <label>Salaire</label><input type="number" id="Salaire">
             <label>Employer</label>
+
             <select id="Employer">
               <option value=""></option>
               <option value="société">société privée</option>
@@ -122,7 +124,7 @@
               <option value="collectivité">collectivité territoriale</option>
             </select>
             
-            <button class="Ajouter">Ajouter </button>
+            <button id="Ajouter"  type="button">Ajouter </button>
           </form>
 
           <form class="Liste">
@@ -134,7 +136,7 @@
                 <th>Employer</th>
               </tr>
             
-             <tbody class="tbody">
+             <tbody id="tbody">
               </tbody> 
 
             </table>
@@ -383,6 +385,7 @@
     <script src="js/data.js" type="module"></script>
     <script src="./js/classes/declaration.js" type="module"></script>
     <script src="js/Employeur.js" type="module"></script>
+    <script src="css/employee.js" type="module"></script>
 
 </body>
 
