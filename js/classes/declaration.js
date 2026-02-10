@@ -174,7 +174,3 @@ const getDeclaration = (...data) => {
   }
 };
 
-const alreadyDeclared = (employeurId, declarationDate) => {
-  for (const employeur of employeurs) {
-  }
-};
