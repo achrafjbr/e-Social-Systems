@@ -24,6 +24,9 @@ const saveEmployeurBtn = document.querySelector(".save_employeur");
 
 const declarationTable = document.querySelector(".employeur_table_data");
 
+const popUP = document.querySelector(".pop_up");
+const message = document.querySelector(".message");
+
 let selectedSocialRaison = "";
 
 socialSelection.addEventListener("change", (event) => {
@@ -90,11 +93,29 @@ const addDeclaration = () => {
   // Check if this employeur has added a declaration in this month.
 
   const declareDate = new Date(declarationDate.value);
-  const declarationmonth = declareDate.getMonth();
-  let isAlreadyDeclared = alreadyDeclared(employeurId, declarationmonth);
+  const declarationMonth = declareDate.getMonth();
+  let isAlreadyDeclared = alreadyDeclared(employeurId, declarationMonth);
+  console.log(isAlreadyDeclared);
+
   // If already added a declaration show him an Alert message.
-  // Elese show him a success message
-  
+  if (isAlreadyDeclared == true) {
+    message.innerHTML = "";
+    // remove the default settings
+    popUP.classList.remove("hidden");
+    // add new settings
+    popUP.classList.add("showen");
+    // Set the message on pop up.
+    message.innerHTML = `Le employeur ${selectedSocialRaison} est deja declarer!`;
+    const timeOut = setTimeout(() => {
+      // back to the defautl settings
+      popUP.classList.remove("showen");
+
+      popUP.classList.add("hidden");
+
+      return;
+    }, 1000);
+  }
+
   // declaration Object
   let declaration = {
     id: Date.now(),
@@ -123,6 +144,26 @@ const addDeclaration = () => {
               </tr>`;
 
   declarationTable.innerHTML += table;
+
+  // Elese show him a success message
+  if (isAlreadyDeclared == false) {
+    message.innerHTML = '';
+    // remove the default settings
+    popUP.classList.remove("hidden");
+    popUP.classList.remove("failur");
+    // add new settings
+    popUP.classList.add("showen");
+    popUP.classList.add("success");
+    // Set the message on pop up.
+    message.innerHTML = `Le employeur ${selectedSocialRaison} été ajouté avec succée`;
+    const timeOut = setTimeout(() => {
+      // back to the defautl settings
+      popUP.classList.add("hidden");
+      popUP.classList.add("failur");
+    }, 1000);
+    //clearInterval(interval);
+    return;
+  }
 };
 
 saveEmployeurBtn.addEventListener("click", addDeclaration);
@@ -174,7 +215,17 @@ const getDeclaration = (...data) => {
   }
 };
 
-const alreadyDeclared = (employeurId, declarationDate) => {
-  for (const employeur of employeurs) {
+const alreadyDeclared = (employeurId, declarationMonth) => {
+  for (const declaration of declarations) {
+    const employeurDeclarationMobth = new Date(
+      declaration.dateDeclaration,
+    ).getMonth();
+    if (declaration.employeurId == employeurId) {
+      if (employeurDeclarationMobth == declarationMonth) {
+        return true;
+      }
+    }
   }
+
+  return false;
 };
