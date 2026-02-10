@@ -220,7 +220,6 @@ let employees = [
     salaire: 2700,
     employeurId: 3,
   },
-
   {
     id: 5,
     nomPrenom: "Samira jalal",
