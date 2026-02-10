@@ -111,9 +111,8 @@ const addDeclaration = () => {
       popUP.classList.remove("showen");
 
       popUP.classList.add("hidden");
-
-      return;
     }, 1000);
+    return;
   }
 
   // declaration Object
@@ -147,7 +146,7 @@ const addDeclaration = () => {
 
   // Elese show him a success message
   if (isAlreadyDeclared == false) {
-    message.innerHTML = '';
+    message.innerHTML = "";
     // remove the default settings
     popUP.classList.remove("hidden");
     popUP.classList.remove("failur");
@@ -162,8 +161,8 @@ const addDeclaration = () => {
       popUP.classList.add("failur");
     }, 1000);
     //clearInterval(interval);
-    return;
   }
+  return;
 };
 
 saveEmployeurBtn.addEventListener("click", addDeclaration);

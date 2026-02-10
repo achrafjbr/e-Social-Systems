@@ -406,8 +406,11 @@ td {
 }
 
 /*-- Pop-up for declaration: when the user declare two times in the same month the popup will trigger  --*/
+
+
+
 .pop_up {
-  width: 25%;
+ width:25% ;
   height: 10%;
   padding: 0.5rem;
   display: flex;
@@ -415,18 +418,22 @@ td {
   align-items: center;
   position: absolute;
   right: 0;
-  top: 5px;
+  bottom: 0;
   color: white;
-  transition: width 1s linear;
+  transform: translateX(-25%); 
+  transition: transform 0.4s linear;
   border-radius: 10px;
+  z-index: 111;
   opacity: 0.7;
 }
 
 .pop_up.showen {
   display: block;
+  transform: translateX(0);
 }
 .pop_up.hidden {
   display: none;
+  transform: translateX(0);
 }
 
 .pop_up.success {
