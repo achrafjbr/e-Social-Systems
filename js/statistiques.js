@@ -5,6 +5,7 @@ const employeesCount = document.getElementById("employeesCount");
 const Cotisationstotales = document.getElementById("Cotisationstotales");
 const SalaireMoyen = document.getElementById("SalaireMoyen");
 const RepEmpSecteur = document.getElementById("RepartitionContent");
+const DeclarationRec = document.getElementById("DeclarationRec");
 let total = 0;
 let SalaireTotal = 0;
 let Moyenne = 0;
@@ -50,11 +51,30 @@ function CountEmployeeSecteurs(id) {
 function EmployeurCotisationsCount(id) {
     let count = 0;
     employeurCotisations.forEach((Cotisations, index) => {
-        if(Cotisations.employeurId == id ){
+        if (Cotisations.employeurId == id) {
             count += Cotisations.tauxPatronalEtSocial;
         }
-    }); 
+    });
     return count;
+}
+
+function EmplouerSectuer (id){
+    let sector ;
+    employeurs.forEach((employeur,index)=>{
+        if(employeur.id == id){
+            sector = employeur.sector
+        }
+    });
+    return sector;
+}
+function SalaireEmpDec(id){
+    let salaire = 0;
+    employees.forEach((employee,index)=>{
+        if(employee.employeurId == id ){
+            salaire += employee.salaire;
+        }
+    });
+    return salaire;
 }
 
 
@@ -65,7 +85,7 @@ function RepEmpSecteurs() {
     let Cotisations = 0;
     employeurs.forEach((employeur, index) => {
         count = CountEmployeeSecteurs(employeur.id);
-        Cotisations =  EmployeurCotisationsCount(employeur.id);
+        Cotisations = EmployeurCotisationsCount(employeur.id);
         RepEmpSecteur.innerHTML += `
         <div class="flex items-center justify-between p-3 hover:bg-gray-50 rounded-lg">
                   <div class="flex items-center">
@@ -84,8 +104,34 @@ function RepEmpSecteurs() {
                 </div>`
     });
 }
-RepEmpSecteurs()
 
+
+function RecentDeclarations() {
+    DeclarationRec.innerHTML = "";
+     let sector;
+     let salaire;
+    declarations.forEach((declaration, index) => {
+        sector = EmplouerSectuer (declaration.employeurId);
+        salaire = SalaireEmpDec(declaration.employeurId);
+        DeclarationRec.innerHTML += `
+            <div class="flex items-center justify-between p-3 hover:bg-gray-50 rounded-lg">
+                    <div>
+                      <h5 class="font-medium text-gray-800">${sector}</h5>
+                      <p class="text-sm text-gray-600">${declaration.anneeMois}</p>
+                    </div>
+                    <div class="text-right">
+                      <div class="mb-1"><span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">Date declaration :${declaration.dateDeclaration} </span></div>
+                      <p class="text-sm text-gray-800">${salaire}&nbsp;MAD</p>
+                    </div>
+                  </div>
+        `;
+
+    });
+}
+
+
+RepEmpSecteurs()
+RecentDeclarations()
 SalaireMoyen.textContent = SalaireMoyene()
 EmpEnergCount.textContent = countEmployeurs();
 employeesCount.textContent = countEmployees();
