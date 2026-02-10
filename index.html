@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="css/style.css" />
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <title>E-Social System</title>
 
   <style>
@@ -102,8 +103,10 @@
       <div class="screen assures">
         <div class="parte1">
           <h1>Gestion des Employees</h1>
-          <i class="fa-solid fa-magnifying-glass search-icon"></i><input type="text" class="insearch"
+          <div class="serchelement">
+<i class="fa-solid fa-magnifying-glass search-icon"></i><input type="text" class="insearch"
             placeholder="Search...">
+          </div>
         </div>
         <div class="Employees">
           <form class="Ajoute">
@@ -156,15 +159,17 @@
               <div class="employeur-selection">
                 <h5>Employeur</h5>
                 <select name="employeur" id="employeur-selection">
-                  <option value="tech solution">Tech Solution</option>
-                  <option value="agr service">Arg Service</option>
-                  <option value="small prod">Small Prod</option>
+                  <option value="Tech tache">Tech tache</option>
+                  <option value="Heber">Heber</option>
+                  <option value="Build-SET">Build-SET</option>
+                  <option value="Educt">Educt</option>
+                  <option value="SanFran">SanFran</option>
                 </select>
               </div>
 
               <div class="mois_date">
                 <h5>Mois/Année</h5>
-                <input type="month" name="" id="annee-mois" />
+                <input type="date" name="" id="annee-mois" />
               </div>
 
               <div class="declaration_date">
@@ -183,7 +188,7 @@
 
           <div class="right-part">
             <p class="content_title">Historique des déclarations</p>
-            <table>
+            <table class="employeur_table_data">
               <tr>
                 <th>Employeur</th>
                 <th>Mois/Année</th>
