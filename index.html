@@ -21,6 +21,7 @@
   <div class="app">
     <div class="header">LOGO</div>
 
+
     <div class="tabs">
       <div class="tab 0 activated">
         <img src="./images/icons/employeurs.png" class="icon" alt="" />
@@ -208,6 +209,21 @@
 
       <div class="screen calculateur">
         <h1>calculateur</h1>
+        <div class="table-wrapper">
+            <table id="cotisationsTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nom Employeur</th>
+                        <th>Total Salaires Bruts (DH)</th>
+                        <th>Total Cotisations Salariales (DH)</th>
+                        <th>Total Cotisations Patronales (DH)</th>
+                        <th>Pénalités (DH)</th>
+                        <th>Montant Final (DH)</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
       </div>
 
       <div class="screen statistique">
@@ -323,11 +339,13 @@
       </div> -->
           </div>
 
-          <script src="js/app.js" type="module"></script>
-          <script src="js/statistiques.js" type="module"></script>
-          <script src="js/data.js" type="module"></script>
-          <script src="./js/classes/declaration.js" type="module"></script>
-          <script src="js/Employeur.js" type="module"></script>
+    <script src="js/app.js" type="module"></script>
+    <script src="js/statistiques.js" type="module"></script>
+    <script src="js/data.js" type="module"></script>
+    <script src="./js/classes/declaration.js" type="module"></script>
+    <script src="./js/classes/cotisations.js" type="module"></script>
+    <script src="js/Employeur.js" type="module"></script>
+
 
 </body>
 
