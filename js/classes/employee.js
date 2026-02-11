@@ -1,15 +1,32 @@
 const Ajouter = document.getElementById("Ajouter");
 const tbody = document.getElementById("tbody");
+const Employer = document.getElementById("Employer");
 
-let stock = JSON.parse(localStorage.getItem("stock")) || [];
+
+
+
+
+
+function getLocalStorage(table){
+  return JSON.parse(localStorage.getItem(table))
+}
+
+
+let stock = getLocalStorage("employees");
+
+let employees = getLocalStorage("employees") 
+let employeurs = getLocalStorage("employeurs")
+
+// JSON.parse(localStorage.getItem("employeurs")) || [];
+
 
 // 🔹 نعرضو data القديمة
-stock.forEach(emp => {
+employees.forEach(emp => {
   const tr = document.createElement("tr");
   tr.innerHTML = `
-    <td>${emp.Nom}</td>
-    <td>${emp.Salaire}</td>
-    <td>${emp.Employer}</td>
+    <td>${emp.nomPrenom}</td>
+    <td>${emp.salaire}</td>
+    <td>${emp.employeurId}</td>
   `;
   tbody.appendChild(tr);
 });
@@ -33,18 +50,29 @@ if(isNaN(Salaire) || Salaire<=0){
 return;
 }
 
+
+
   // 🔹 1. نصايبو object
   const employee = {
-    Nom: Nom,
-    Salaire: Salaire,
-    Employer: Employer
+    id : employees.length + 1,
+    nomPrenom: Nom,
+    salaire: Salaire,
+    employeurId: Employer
   };
 
   // 🔹 2. نضيفوه للـ array
+  function setLocalStorage(table,data){
+    localStorage.setItem(table, JSON.stringify(data));
+  }
+
   stock.push(employee);
+  setLocalStorage("employees",stock)
+
+
 
   // 🔹 3. نخزّنو ف localStorage
-  localStorage.setItem("stock", JSON.stringify(stock))
+
+  
 
     const tr = document.createElement("tr");
     tr.innerHTML =`
@@ -77,6 +105,14 @@ searchIcon.addEventListener("click", function (e) {
   });
 });
 
+function getOptEmp(){
+  Employer.innerHTML= "";
+  employeurs.forEach((employeur,index)=>{
+    Employer.innerHTML+=`<option value="${employeur.id}">${employeur.sociale}</option>`;
+  });
+  // 
+}
+getOptEmp()
 
 // insearch= input 
 // search-icon = icon 
