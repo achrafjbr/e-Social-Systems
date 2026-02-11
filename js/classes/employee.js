@@ -7,14 +7,14 @@ const Employer = document.getElementById("Employer");
 
 
 
-function getLocalStorage(table){
+function getLocalStorage(table) {
   return JSON.parse(localStorage.getItem(table))
 }
 
 
 let stock = getLocalStorage("employees");
 
-let employees = getLocalStorage("employees") 
+let employees = getLocalStorage("employees")
 let employeurs = getLocalStorage("employeurs")
 
 // JSON.parse(localStorage.getItem("employeurs")) || [];
@@ -31,57 +31,57 @@ employees.forEach(emp => {
   tbody.appendChild(tr);
 });
 
-Ajouter.addEventListener("click" , function(e){
-    e.preventDefault();
-   
-    
-    const Nom = document.getElementById("Nom").value;
-    const Salaire = document.getElementById("Salaire").value;
-    const Employer = document.getElementById("Employer").value;
+Ajouter.addEventListener("click", function (e) {
+  e.preventDefault();
 
 
-if(Nom ===""|| Salaire ==="" || Employer === ""){
-alert("Veuillez remplir tous les champs");
-return;
-}
+  const Nom = document.getElementById("Nom").value;
+  const Salaire = document.getElementById("Salaire").value;
+  const Employer = document.getElementById("Employer").value;
 
-if(isNaN(Salaire) || Salaire<=0){
+
+  if (Nom === "" || Salaire === "" || Employer === "") {
+    alert("Veuillez remplir tous les champs");
+    return;
+  }
+
+  if (isNaN(Salaire) || Salaire <= 0) {
     alert("veuille enter un number");
-return;
-}
+    return;
+  }
 
 
 
   // 🔹 1. نصايبو object
   const employee = {
-    id : employees.length + 1,
+    id: employees.length + 1,
     nomPrenom: Nom,
     salaire: Salaire,
     employeurId: Employer
   };
 
   // 🔹 2. نضيفوه للـ array
-  function setLocalStorage(table,data){
+  function setLocalStorage(table, data) {
     localStorage.setItem(table, JSON.stringify(data));
   }
 
   stock.push(employee);
-  setLocalStorage("employees",stock)
+  setLocalStorage("employees", stock)
 
 
 
   // 🔹 3. نخزّنو ف localStorage
 
-  
 
-    const tr = document.createElement("tr");
-    tr.innerHTML =`
+
+  const tr = document.createElement("tr");
+  tr.innerHTML = `
     <td>${Nom}</td>
     <td>${Salaire}</td>
     <td>${Employer}</td>
     `;
 
-    tbody.appendChild(tr);
+  tbody.appendChild(tr);
 
 });
 const searchIcon = document.querySelector(".search-icon");
@@ -105,15 +105,15 @@ searchIcon.addEventListener("click", function (e) {
   });
 });
 
-function getOptEmp(){
-  Employer.innerHTML= "";
-  employeurs.forEach((employeur,index)=>{
-    Employer.innerHTML+=`<option value="${employeur.id}">${employeur.sociale}</option>`;
+function getOptEmp() {
+  Employer.innerHTML = "";
+  employeurs.forEach((employeur, index) => {
+    Employer.innerHTML += `<option value="${employeur.id}">${employeur.sociale}</option>`;
   });
   // 
 }
 getOptEmp()
 
-// insearch= input 
-// search-icon = icon 
+// insearch= input
+// search-icon = icon
 // serchelement = div li jma3 les element 2
