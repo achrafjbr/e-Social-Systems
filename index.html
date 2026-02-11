@@ -14,31 +14,30 @@
     input {
       background-color: white;
     }
-    
+
     .screen {
       display: none;
     }
-    
+
     .screen.activated {
       display: block;
     }
-    
+
     .tab {
       cursor: pointer;
       transition: all 0.3s ease;
     }
-    
+
     .tab.activated {
       background-color: rgb(235, 232, 232);
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
       border: 1px solid #ffffff;
       width: fit-content;
     }
-    
+
     .tab.activated .title {
       color: #2563eb;
     }
-    
   </style>
 </head>
 
@@ -48,7 +47,7 @@
       <div>
         <h1 class="logo">LOGO</h1>
       </div>
-      
+
       <!-- Tabs Navigation -->
       <div class="tabs flex space-x-1  p-1 rounded-lg gap-6">
         <div class="tab 0 activated flex items-center space-x-2 px-4 py-3 rounded-md ">
@@ -135,7 +134,8 @@
         <div class="parte1">
           <h1>Gestion des Employees</h1>
           <div class="serchelement">
-            <i class="fa-solid fa-magnifying-glass search-icon"></i><input type="text" class="insearch" placeholder="Search...">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i><input type="text" class="insearch"
+              placeholder="Search...">
           </div>
         </div>
         <div class="Employees">
@@ -177,6 +177,10 @@
 
       <!-- Tab 2: Declaration -->
       <div class="screen declaration">
+        <!-- Pop-up for declaration: when the user declare two times in the same month the popup will trigger -->
+        <div class="pop_up hidden failur">
+          <h1 class="message"></h1>
+        </div>
         <h4 class="title">Déclaration mensuelle des salaires</h4>
         <div class="content">
           <div class="left-part">
@@ -252,47 +256,51 @@
           <div class="flex flex-row justify-center items-center">
             <div class="flex flex-wrap gap-6">
               <!-- start statistique card -->
-              <div class="flex flex-row bg-white border-[1px] rounded-lg h-24 w-64 gap-6 justify-center transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-lg shadow-md ">
+              <div
+                class="flex flex-row bg-white border-[1px] rounded-lg h-24 w-64 gap-6 justify-center transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-lg shadow-md ">
                 <div class="flex flex-row gap-2 mt-4">
                   <div class="bg-blue-100 w-10 h-14 rounded-md flex items-center justify-center">
                     <i class="ri-community-line text-3xl text-blue-700"></i>
                   </div>
                   <div class="ml-5">
                     <p class="text-gray-500">Employeur energistree</p>
-                    <p id="EmpEnergCount">15</p>
+                    <p id="EmpEnergCount">0</p>
                   </div>
                 </div>
               </div>
-              <div class="flex flex-row bg-white border-[1px] rounded-lg h-24 w-64 gap-6 justify-center transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-lg shadow-md">
+              <div
+                class="flex flex-row bg-white border-[1px] rounded-lg h-24 w-64 gap-6 justify-center transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-lg shadow-md">
                 <div class="flex flex-row gap-2 mt-4">
                   <div class="bg-green-100 w-14 h-14 rounded-md flex items-center justify-center">
                     <i class="ri-team-fill text-2xl text-green-700"></i>
                   </div>
                   <div class="ml-5">
                     <p class="text-gray-500">Assurés enregistrés</p>
-                    <p id="employeesCount">15</p>
+                    <p id="employeesCount">0</p>
                   </div>
                 </div>
               </div>
-              <div class="flex flex-row bg-white border-[1px] rounded-lg h-24 w-64 gap-6 justify-center transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-lg shadow-md">
+              <div
+                class="flex flex-row bg-white border-[1px] rounded-lg h-24 w-64 gap-6 justify-center transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-lg shadow-md">
                 <div class="flex flex-row gap-2 mt-4">
                   <div class="bg-purple-100 w-10 h-14 rounded-md flex items-center justify-center">
                     <i class="ri-coins-line text-3xl text-purple-700"></i>
                   </div>
                   <div class="ml-5">
                     <p class="text-gray-500">Cotisations totales</p>
-                    <p id="Cotisationstotales">15</p>
+                    <p id="Cotisationstotales">0</p>
                   </div>
                 </div>
               </div>
-              <div class="flex flex-row bg-white border-[1px] rounded-lg h-24 w-64 gap-6 justify-center transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-lg shadow-md">
+              <div
+                class="flex flex-row bg-white border-[1px] rounded-lg h-24 w-64 gap-6 justify-center transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-lg shadow-md">
                 <div class="flex flex-row gap-2 mt-4">
                   <div class="bg-yellow-100 w-10 h-14 rounded-md flex items-center justify-center">
                     <i class="ri-line-chart-line text-3xl text-yellow-700"></i>
                   </div>
                   <div class="ml-5">
                     <p class="text-gray-500">Salaire moyen</p>
-                    <p id="SalaireMoyen">15</p>
+                    <p id="SalaireMoyen">0</p>
                   </div>
                 </div>
               </div>
@@ -305,20 +313,12 @@
                 <h1>No data </h1>
               </div>
             </div>
-            <div class="p-4 shadow-md max-h-80 overflow-auto no-scrollbar w-[550px] border-[1px] rounded-lg shadow-md ml-1">
+            <div
+              class="p-4 shadow-md max-h-80 overflow-auto no-scrollbar w-[550px] border-[1px] rounded-lg shadow-md ml-1">
               <div id="evolution_content">
                 <h2 class="font-bold mb-2 text-xl">Déclarations récentes</h2>
                 <div id="DeclarationRec">
-                  <div class="flex items-center justify-between p-3 hover:bg-gray-50 rounded-lg">
-                    <div>
-                      <h5 class="font-medium text-gray-800">Tech Innovations SARL</h5>
-                      <p class="text-sm text-gray-600">janvier 2026</p>
-                    </div>
-                    <div class="text-right">
-                      <div class="mb-1"><span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">Calculé</span></div>
-                      <p class="text-sm text-gray-800">1.560&nbsp;MAD</p>
-                    </div>
-                  </div>
+                    <h1>No data</h1>
                 </div>
               </div>
             </div>
@@ -340,12 +340,12 @@
     </div>
 
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
+      document.addEventListener('DOMContentLoaded', function () {
         // Get all tabs
         const tabs = document.querySelectorAll('.tab');
         // Get all screens
         const screens = document.querySelectorAll('.screen');
-        
+
         // Function to switch tabs
         function switchTab(tabIndex) {
           // Remove 'activated' class from all tabs
@@ -357,7 +357,7 @@
               title.classList.add('text-gray-700');
             }
           });
-          
+
           // Add 'activated' class to clicked tab
           const activeTab = document.querySelector(`.tab.${tabIndex}`);
           if (activeTab) {
@@ -368,26 +368,26 @@
               title.classList.add('text-blue-600');
             }
           }
-          
+
           // Hide all screens
           screens.forEach(screen => {
             screen.classList.remove('activated');
           });
-          
+
           // Show the corresponding screen
           const activeScreen = screens[tabIndex];
           if (activeScreen) {
             activeScreen.classList.add('activated');
           }
         }
-        
+
         // Add click event to each tab
         tabs.forEach((tab, index) => {
           tab.addEventListener('click', () => {
             switchTab(index);
           });
         });
-        
+
         // Initialize with first tab active
         switchTab(0);
       });
@@ -401,4 +401,5 @@
     <script src="js/Employeur.js" type="module"></script>
   </div>
 </body>
+
 </html>
