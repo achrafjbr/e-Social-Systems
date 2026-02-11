@@ -1,3 +1,4 @@
+import { employeurCotisations, Sector, employeurs, employees, declarations } from "./data.js";
 
 const EmpEnergCount = document.getElementById("EmpEnergCount");
 const employeesCount = document.getElementById("employeesCount");
@@ -9,19 +10,6 @@ let total = 0;
 let SalaireTotal = 0;
 let Moyenne = 0;
 let count = 0;
-let employeurCotisations;
-let employeurs;
-let employees;
-let declarations;
-
-function getData(table) {
-    return JSON.parse(localStorage.getItem(table));
-}
-employeurCotisations = getData("employeurCotisations");
-employeurs = getData("employeurs");
-employees = getData("employees");
-declarations = getData("declarations");
-console.log(employeurCotisations);
 
 
 function countEmployeurs() {
