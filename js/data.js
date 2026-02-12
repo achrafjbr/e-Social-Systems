@@ -167,7 +167,7 @@ const Sector = {
   FINANCE: "Finance, assurance, immobilier",
 };
 
-let employeur = [
+let employeurs = [
   {
     id: 1,
     sociale: "Tech tache",
@@ -195,7 +195,7 @@ let employeur = [
   },
 ];
 
-let employee = [
+let employees = [
   {
     id: 1,
     nomPrenom: "Kamal nasim",
@@ -220,7 +220,6 @@ let employee = [
     salaire: 2700,
     employeurId: 3,
   },
-
   {
     id: 5,
     nomPrenom: "Samira jalal",
@@ -235,7 +234,7 @@ let employee = [
   },
 ];
 
-let declaration = [
+let declarations = [
   {
     id: 1,
     anneeMois: "02/03/2025",
@@ -252,7 +251,7 @@ let declaration = [
   },
   {
     id: 3,
-    anneeMois: "02/03/2025",
+    anneeMois: "22/03/2025",
     dateDeclaration: "07/03/2025",
     penalité: 15,
     employeurId: 3,
@@ -266,7 +265,7 @@ let declaration = [
   },
 ];
 
-let employeurCotisation = [
+let employeurCotisations = [
   {
     id: 1,
     tauxPatronalEtSocial: 1960, // (5000 + 2700) * 0.14
@@ -289,7 +288,7 @@ let employeurCotisation = [
   },
 ];
 
-let employeeCotisation = [
+let employeeCotisations = [
   {
     id: 1,
     tauxPatronalEtSocial: 700, // 10000 * 0.07
@@ -321,3 +320,12 @@ let employeeCotisation = [
     employeeId: 6,
   },
 ];
+
+export  {
+  Sector,
+  employeurs,
+  employeurCotisations,
+  employees,
+  employeeCotisations,
+  declarations
+}
