@@ -149,6 +149,8 @@ body {
 .Ajoute input {
   border: #000000 1px solid;
   border-radius: 8px;
+<<<<<<< HEAD
+=======
   height: 26px;
   box-shadow: #000000 1px 1px 2px;
 }
@@ -169,10 +171,27 @@ body {
 #Employer{
   border:#000000 1px solid;
   border-radius: 8px;
+>>>>>>> origin
   height: 26px;
   box-shadow: #000000 1px 1px 2px;
-
 }
+<<<<<<< HEAD
+.Ajoute label {
+  font-size: 13px;
+  font-family: "Times New Roman", Times, serif;
+}
+.Ajouter {
+  font-size: 14px;
+  color: rgb(255, 255, 255);
+  height: 25px;
+  border: #1d4ed8 1px solid;
+  background: #1d4ed8;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 1px 1px 2px #000000;
+}
+=======
+>>>>>>> origin
 /* for table */
 .Liste h2 {
   text-align: center;
@@ -309,6 +328,8 @@ table td {
     background-color: #dcfce7;
   }
 }
+<<<<<<< HEAD
+=======
 /*--hiba start css--*/
 .form-title {
   border-bottom: 1px solid #d2cccc;
@@ -450,6 +471,7 @@ td {
 }
 
 /*--hiba end css--*/
+>>>>>>> origin
 
 /* start abderrahman  */
 .no-scrollbar {
