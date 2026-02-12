@@ -166,12 +166,15 @@ const calculateThePenalityOfLating = (date, decDate) => {
   const payDate = new Date(date);
   const declareDate = new Date(decDate);
 
-  const payDay = payDate.getDay();
+  const payDay = payDate.getDay();///
   const decDay = declareDate.getDay();
   console.log("payDay",payDay);
   console.log("decDay",decDay);
+
+  const diffTime = Math.abs(declareDate - payDate);
+const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
   
-  return (decDay - payDay) * 0.10;
+  return diffDays;
 };
 
 const getTotalPay = (employeurId) => {
