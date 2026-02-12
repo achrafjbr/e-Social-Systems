@@ -70,19 +70,19 @@ function EmployeurCotisationsCount(id) {
     return count;
 }
 
-function EmplouerSectuer (id){
-    let sector ;
-    employeurs.forEach((employeur,index)=>{
-        if(employeur.id == id){
+function EmplouerSectuer(id) {
+    let sector;
+    employeurs.forEach((employeur, index) => {
+        if (employeur.id == id) {
             sector = employeur.sector
         }
     });
     return sector;
 }
-function SalaireEmpDec(id){
+function SalaireEmpDec(id) {
     let salaire = 0;
-    employees.forEach((employee,index)=>{
-        if(employee.employeurId == id ){
+    employees.forEach((employee, index) => {
+        if (employee.employeurId == id) {
             salaire += employee.salaire;
         }
     });
@@ -110,7 +110,7 @@ function RepEmpSecteurs() {
                     </div>
                   </div>
                   <div class="text-right">
-                    <p class="font-bold text-gray-800">${Cotisations}&nbsp;MAD</p>
+                    <p class="font-bold text-gray-800">${Cotisations.toFixed(2)}&nbsp;MAD</p>
                     <p class="text-xs text-gray-600">Cotisations</p>
                   </div>
                 </div>`
@@ -120,10 +120,10 @@ function RepEmpSecteurs() {
 
 function RecentDeclarations() {
     DeclarationRec.innerHTML = "";
-     let sector;
-     let salaire;
+    let sector;
+    let salaire;
     declarations.forEach((declaration, index) => {
-        sector = EmplouerSectuer (declaration.employeurId);
+        sector = EmplouerSectuer(declaration.employeurId);
         salaire = SalaireEmpDec(declaration.employeurId);
         DeclarationRec.innerHTML += `
             <div class="flex items-center justify-between p-3 hover:bg-gray-50 rounded-lg">
@@ -144,8 +144,8 @@ function RecentDeclarations() {
 
 RepEmpSecteurs()
 RecentDeclarations()
-SalaireMoyen.textContent = SalaireMoyene()
+SalaireMoyen.textContent = SalaireMoyene().toFixed(2);
 EmpEnergCount.textContent = countEmployeurs();
 employeesCount.textContent = countEmployees();
-Cotisationstotales.textContent = employeurCotisationsTotal();
+Cotisationstotales.textContent = employeurCotisationsTotal().toFixed(2);
 
