@@ -1,7 +1,19 @@
+// const employeurs = JSON.parse(localStorage.getItem('employeurs')) || [];
+// const employees = JSON.parse(localStorage.getItem('employees')) || [];
+// const declarations = JSON.parse(localStorage.getItem('declarations')) || [];
+
+const Sector = {
+  COMMERCE: "Commerce",
+  HEBERGEMENT: "Hébergement",
+  CONSTRUCTION: "Construction",
+  ENSEIGNEMENT: "Enseignement",
+  SANTE: "Santé"
+};
+
 let employeurs = [
   {
     id: 1,
-    sociale: "Tech tache",  // property name is "sociale", not "raisonSociale"
+    sociale: "Tech tache",
     sector: Sector.COMMERCE,
   },
   {
@@ -73,7 +85,7 @@ let declarations = [
     dateDeclaration: "05/03/2025",
     penalité: 30,
     employeurId: 1,
-    joursRetard: 2, // Calculated from the dates
+    joursRetard: 2,
   },
   {
     id: 2,
@@ -124,7 +136,7 @@ function genererCotisations(employeurs, employees, declarations) {
             totalCotisationsPatronales += cotisationPatronale;
         });
 
-        const penalite = declaration.penalité * totalSalairesBruts * TAUX_PENALITE;
+        const penalite = declaration.joursRetard * totalSalairesBruts * TAUX_PENALITE;
         const montantFinal = totalCotisationsSalariales + totalCotisationsPatronales + penalite; 
         
         cotisations.push({

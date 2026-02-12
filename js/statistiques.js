@@ -136,3 +136,4 @@ SalaireMoyen.textContent = SalaireMoyene()
 EmpEnergCount.textContent = countEmployeurs();
 employeesCount.textContent = countEmployees();
 Cotisationstotales.textContent = employeurCotisationsTotal();
+
