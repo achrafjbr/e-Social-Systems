@@ -109,7 +109,7 @@ const addDeclaration = () => {
 
   // Then add declaration of this employeur
   declarations.push(declaration);
-  setDataStorage("declarations", declaration);
+  setDataStorage("declarations", declarations);
 
   // Get total pay from employees salary whose working with this employeur.
   let totalPay = getTotalPay(employeurId);

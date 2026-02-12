@@ -74,7 +74,7 @@ function EmplouerSectuer(id) {
     let sector;
     employeurs.forEach((employeur, index) => {
         if (employeur.id == id) {
-            sector = employeur.sector
+            sector = employeur.sociale
         }
     });
     return sector;
