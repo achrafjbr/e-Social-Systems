@@ -36,23 +36,20 @@ localStorage.setItem(
   JSON.stringify([
     {
       id: 1,
-      anneeMois: "03/2025",
-      dateDeclaration: "05/03/2025",
-      penalité: 0,
+      anneeMois: "01/03/2025",
+      dateDeclaration: "05/03/2025",     
       employeurId: 1,
     },
     {
       id: 2,
-      anneeMois: "03/2025",
+      anneeMois: "01/03/2025",
       dateDeclaration: "06/03/2025",
-      penalité: 20,
       employeurId: 2,
     },
     {
       id: 3,
-      anneeMois: "03/2025",
+      anneeMois: "01/03/2025",
       dateDeclaration: "07/03/2025",
-      penalité: 10,
       employeurId: 3,
     },
   ]),
@@ -62,8 +59,8 @@ const getDataStorage = (table) => {
   return JSON.parse(localStorage.getItem(table));
 };
 
-const setDataStorage = (table) => {
-  return JSON.stringify(localStorage.setItem(table));
+const setDataStorage = (table, data) => {
+  return localStorage.setItem(table, JSON.stringify(data));
 };
 
 console.log("Data seeded successfully!");
