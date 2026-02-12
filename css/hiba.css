@@ -1,4 +1,10 @@
 /*--hiba start css--*/
+.top-header {
+  font-size: 17;
+  color: #1d4ed8;
+  margin-bottom: 50px;
+  border-bottom: 1px solid #d2cccc;
+}
 .form-title {
   border-bottom: 1px solid #d2cccc;
   margin-bottom: 20px;

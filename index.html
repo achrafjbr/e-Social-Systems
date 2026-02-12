@@ -95,21 +95,24 @@
       <!-- Tab 0: Employeurs -->
       <div class="screen employeur activated">
         <!-- section form start -->
+         <div class="top-header">
+          <h1>Gestion des Employeur</h1>
+         </div>
         <div class="employeur">
           <div class="left">
-            <form>
+            <form class="form-contianer">
               <h2 class="form-title">Employeurs</h2>
-              <div class="formulaire">
+              <!-- <div class="formulaire">
                 <label>Employeur</label>
                 <input id="employeur" type="text" />
-              </div>
+              </div> -->
               <div class="formulaire">
                 <label>Sociale</label>
-                <input id="Sociale" type="text" />
+                <input class="inputEl" id="Sociale" type="text" />
               </div>
               <div class="formulaire">
                 <label>Secteur</label>
-                <input id="Secteur" type="text" />
+                <input class="inputEl" id="Secteur" type="text" />
               </div>
               <div>
                 <button class="btn" type="submit">Entrer</button>
@@ -128,8 +131,6 @@
                     <th>Employeur</th>
                     <th>Raison Sociale</th>
                     <th>Secteur</th>
-                    <th>Employes</th>
-                    <th>Actions</th>
                   </tr>
                 </thead>
                 <tbody id="tableauBody"></tbody>
@@ -411,7 +412,7 @@
     <script src="js/data.js" type="module"></script>
     <script src="./js/classes/declaration.js" type="module"></script>
     <script src="./js/classes/cotisations.js"></script>
-    <script src="js/Employeur.js" type="module"></script>
+    <script src="js/hiba.js" type="module"></script>
     <script src="js/classes/employee.js" type="module"></script>
     <!-- <script src="js/seed.js"></script> -->
 
