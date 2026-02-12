@@ -3,10 +3,6 @@ const tbody = document.getElementById("tbody");
 const Employer = document.getElementById("Employer");
 
 
-
-
-
-
 function getLocalStorage(table) {
   return JSON.parse(localStorage.getItem(table))
 }

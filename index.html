@@ -4,7 +4,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--css file link -->
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/hiba.css"/>
+  <!--css file links end-->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=delete"
+    />
+    <!--btn delete link ends-->
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -83,27 +91,32 @@
     </div>
 
     <div class="screens">
+      <!-- hiba start Employeur -->
       <!-- Tab 0: Employeurs -->
       <div class="screen employeur activated">
         <!-- section form start -->
+         <div class="top-header">
+          <h1>Gestion des Employeur</h1>
+         </div>
         <div class="employeur">
           <div class="left">
-            <form>
+            <form class="form-contianer">
               <h2 class="form-title">Employeurs</h2>
-              <div class="formulaire">
+              <!-- <div class="formulaire">
                 <label>Employeur</label>
                 <input id="employeur" type="text" />
-              </div>
+              </div> -->
               <div class="formulaire">
                 <label>Sociale</label>
-                <input id="employeur" type="text" />
+                <input class="inputEl" id="Sociale" type="text" />
               </div>
               <div class="formulaire">
                 <label>Secteur</label>
-                <input id="employeur" type="text" />
+                <input class="inputEl" id="Secteur" type="text" />
               </div>
               <div>
                 <button class="btn" type="submit">Entrer</button>
+                <div id="message"></div>
               </div>
             </form>
           </div>
@@ -112,16 +125,15 @@
           <div class="right">
             <h2 class="table-title">Liste Des Employeurs</h2>
             <div>
-              <table>
+              <table id="tableau">
                 <thead>
                   <tr>
                     <th>Employeur</th>
                     <th>Raison Sociale</th>
                     <th>Secteur</th>
-                    <th>Employes</th>
-                    <th>Actions</th>
                   </tr>
                 </thead>
+                <tbody id="tableauBody"></tbody>
               </table>
             </div>
           </div>
@@ -334,6 +346,7 @@
         <p>This is the anomalies tab content</p>
       </div>
     </div>
+    <script src="js/Employeur.js"></script>
 
     <script>
       document.addEventListener('DOMContentLoaded', function () {
@@ -394,7 +407,7 @@
     <script src="js/data.js" type="module"></script>
     <script src="./js/classes/declaration.js" type="module"></script>
     <script src="./js/classes/cotisations.js"></script>
-    <script src="js/Employeur.js" type="module"></script>
+    <script src="js/hiba.js" type="module"></script>
     <script src="js/classes/employee.js" type="module"></script>
     <!-- <script src="js/seed.js"></script> -->
 
