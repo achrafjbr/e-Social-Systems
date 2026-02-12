@@ -156,7 +156,7 @@ body {
   font-size: 13px;
   font-family: "Times New Roman", Times, serif;
 }
-.Ajouter {
+#Ajouter {
   font-size: 14px;
   color: rgb(255, 255, 255);
   height: 25px;
@@ -165,6 +165,13 @@ body {
   border-radius: 8px;
   cursor: pointer;
   box-shadow: 1px 1px 2px #000000;
+}
+#Employer{
+  border:#000000 1px solid;
+  border-radius: 8px;
+  height: 26px;
+  box-shadow: #000000 1px 1px 2px;
+
 }
 /* for table */
 .Liste h2 {
@@ -407,20 +414,15 @@ td {
 
 /*-- Pop-up for declaration: when the user declare two times in the same month the popup will trigger  --*/
 
-
-
 .pop_up {
- width:25% ;
+  width: 25%;
   height: 10%;
   padding: 0.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  right: 0;
-  bottom: 0;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
   color: white;
-  transform: translateX(-25%); 
+  transform: translateX(-25%);
   transition: transform 0.4s linear;
   border-radius: 10px;
   z-index: 111;
@@ -430,6 +432,9 @@ td {
 .pop_up.showen {
   display: block;
   transform: translateX(0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .pop_up.hidden {
   display: none;
@@ -458,3 +463,17 @@ td {
 
 
 /* end abderahman */
+
+/* start mounir */
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 3px solid #3498db;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* end mounir */

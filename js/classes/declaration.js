@@ -1,5 +1,5 @@
-import { declarations, employees, employeurs } from "../data.js";
-
+//import { declarations, employees, employeurs } from "../data.js";
+import { getDataStorage, setDataStorage } from "../seed.js";
 class Declaration {
   constructor(id, anneeAndmois, dateDeclaration, enRetard, penalité) {
     this.id = id;
@@ -32,11 +32,17 @@ let selectedSocialRaison = "";
 socialSelection.addEventListener("change", (event) => {
   selectedSocialRaison = event.target.value;
 });
-
+let employeurs;
+let employees;
+let declarations;
 // On the program start
 onload = () => buildTable();
+
 const buildTable = () => {
-  console.log("Start Build");
+  // Get employeur from local storage.
+  employeurs = getDataStorage("employeurs");
+  employees = getDataStorage("employees");
+  declarations = getDataStorage("declarations");
 
   const employeurList = employeurs.map((employeur) => {
     // Get Employeurs and handle their raison social in 'option', and buil the selection element
@@ -52,29 +58,6 @@ const buildTable = () => {
     // Get declaration of this employeur, calculate penality of this employee and rebuild declaration table.
     getDeclaration(employeur.id, employeur.sector, totalPay);
   }
-};
-
-const joinEmployeurWithDeclarationForRerenderingTable = () => {
-  employeurs.forEach((employeur) => {
-    declarations.forEach((declaration) => {
-      //let declarationEmployeur = declaration.employeurId == employeur.id;
-      if (declaration.employeurId == employeur.id) {
-        declarationEmployeur = declaration.employeurId;
-        reRenderDeclarationTable(declarationEmployeur, employeur);
-      }
-    });
-  });
-};
-const reRenderDeclarationTable = (declarationEmployeur, employeur) => {
-  let table = `<tr>
-                <td>${employeur.sociale}</td>
-                <td>${declarationEmployeur.anneeMois}</td>
-                <td>${declarationEmployeur.dateDeclaration}</td>
-                <td class="isAjour">À jour</td>
-                <td>1260 DH</td>
-              </tr>`;
-
-  document.querySelector(".employeur_table_data").innerHTML += table;
 };
 
 const addDeclaration = () => {
@@ -126,6 +109,7 @@ const addDeclaration = () => {
 
   // Then add declaration of this employeur
   declarations.push(declaration);
+  setDataStorage("declarations", declaration);
 
   // Get total pay from employees salary whose working with this employeur.
   let totalPay = getTotalPay(employeurId);
@@ -176,12 +160,18 @@ const findEmployeurBySociale = (sociale) => {
 };
 
 const calculateThePenalityOfLating = (date, decDate) => {
+    console.log("payDay 11111",date);
+  console.log("decDay111111111",decDate);
   // Convert input date to js date.
   const payDate = new Date(date);
   const declareDate = new Date(decDate);
-  const payDay = payDate.getDate();
-  const decDay = declareDate.getDate();
-  return (decDay - payDay) * 0.1;
+
+  const payDay = payDate.getDay();
+  const decDay = declareDate.getDay();
+  console.log("payDay",payDay);
+  console.log("decDay",decDay);
+  
+  return (decDay - payDay) * 0.10;
 };
 
 const getTotalPay = (employeurId) => {
@@ -195,12 +185,15 @@ const getTotalPay = (employeurId) => {
 };
 
 const getDeclaration = (...data) => {
+  console.log(data);
   for (const declaration of declarations) {
-    if (declaration == data[0]) {
+    if (declaration.employeurId == data[0]) {
       const penality = calculateThePenalityOfLating(
-        declaration.anneeMois,
         declaration.dateDeclaration,
+        declaration.anneeMois,
       );
+      console.log('Penality', typeof penality);
+      
       let table = `<tr>
                 <td>${data[1]}</td>
                 <td>${declaration.anneeMois}</td>
