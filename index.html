@@ -140,37 +140,41 @@
           </div>
         </div>
         <div class="Employees">
-          <form class="Ajoute">
-            <h2>Ajoute un assuré </h2>
+          <div>
+            <form class="Ajoute">
+              <h2>Ajoute un assuré </h2>
 
-            <label>Nom</label><input type="text" id="Nom">
-            <label>Salaire</label><input type="number" id="Salaire">
-            <label>Employer</label>
+              <label>Nom</label><input type="text" id="Nom">
+              <label>Salaire</label><input type="number" id="Salaire">
+              <label>Employer</label>
 
-            <select id="Employer">
-              <option value=""></option>
+              <select id="Employer">
+
+                <!-- <option value=""></option>
               <option value="société">société privée</option>
               <option value="administration">administration publique</option>
-              <option value="collectivité">collectivité territoriale</option>
-            </select>
-            
-            <button id="Ajouter"  type="button">Ajouter </button>
-          </form>
+              <option value="collectivité">collectivité territoriale</option> -->
+              </select>
 
-          <form class="Liste">
-            <h2>Liste des assurés</h2>
-            <table class="table">
-              <tr class="hedertab">
-                <th>Nom</th>
-                <th>Salaire</th>
-                <th>Employer</th>
-              </tr>
-            
-             <tbody id="tbody">
-              </tbody> 
+              <button id="Ajouter" type="button">Ajouter </button>
+            </form>
+          </div>
 
-            </table>
-          </form>
+          <div class="max-h-80 overflow-y-auto border rounded-lg" >
+
+              <table class="table ">
+                <tr class="hedertab">
+                  <th>Nom</th>
+                  <th>Salaire</th>
+                  <th>Employer</th>
+                </tr>
+
+                <tbody id="tbody">
+                </tbody>
+
+              </table>
+          </div>
+
         </div>
       </div>
       <!--end employee-->
@@ -230,18 +234,15 @@
 
       <!-- Tab 3: Calculateur -->
       <div class="screen calculateur">
-        <h1>calculateur</h1>
+        <h1>List de calculateur</h1>
         <div class="table-wrapper">
           <table id="cotisationsTable">
             <thead>
               <tr>
                 <th>ID</th>
-                <th>Nom Employeur</th>
-                <th>Total Salaires Bruts (DH)</th>
-                <th>Total Cotisations Salariales (DH)</th>
-                <th>Total Cotisations Patronales (DH)</th>
-                <th>Pénalités (DH)</th>
+                <th>sociale</th>
                 <th>Montant Final (DH)</th>
+                <th>ID Employeur</th>
               </tr>
             </thead>
           </table>
@@ -318,7 +319,7 @@
               <div id="evolution_content">
                 <h2 class="font-bold mb-2 text-xl">Déclarations récentes</h2>
                 <div id="DeclarationRec">
-                    <h1>No data</h1>
+                  <h1>No data</h1>
                 </div>
               </div>
             </div>
@@ -326,7 +327,7 @@
         </div>
       </div>
 
-      <!-- Tab 5: Historique (empty for now) -->
+
       <div class="screen">
         <h1>Historique Content</h1>
         <p>This is the historique tab content</p>
@@ -397,9 +398,10 @@
     <script src="js/statistiques.js" type="module"></script>
     <script src="js/data.js" type="module"></script>
     <script src="./js/classes/declaration.js" type="module"></script>
-    <script src="./js/classes/cotisations.js" type="module"></script>
+    <script src="./js/classes/cotisations.js"></script>
     <script src="js/Employeur.js" type="module"></script>
     <script src="js/classes/employee.js" type="module"></script>
+    <!-- <script src="js/seed.js"></script> -->
 
 
 </body>

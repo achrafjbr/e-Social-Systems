@@ -1,7 +1,19 @@
+// const employeurs = JSON.parse(localStorage.getItem('employeurs')) || [];
+// const employees = JSON.parse(localStorage.getItem('employees')) || [];
+// const declarations = JSON.parse(localStorage.getItem('declarations')) || [];
+
+const Sector = {
+  COMMERCE: "Commerce",
+  HEBERGEMENT: "Hébergement",
+  CONSTRUCTION: "Construction",
+  ENSEIGNEMENT: "Enseignement",
+  SANTE: "Santé"
+};
+
 let employeurs = [
   {
     id: 1,
-    sociale: "Tech tache",  // property name is "sociale", not "raisonSociale"
+    sociale: "Tech tache",
     sector: Sector.COMMERCE,
   },
   {
@@ -73,7 +85,7 @@ let declarations = [
     dateDeclaration: "05/03/2025",
     penalité: 30,
     employeurId: 1,
-    joursRetard: 2, // Calculated from the dates
+    joursRetard: 2,
   },
   {
     id: 2,
@@ -124,22 +136,19 @@ function genererCotisations(employeurs, employees, declarations) {
             totalCotisationsPatronales += cotisationPatronale;
         });
 
-        const penalite = declaration.penalité * totalSalairesBruts * TAUX_PENALITE;
+        const penalite = declaration.joursRetard * totalSalairesBruts * TAUX_PENALITE;
         const montantFinal = totalCotisationsSalariales + totalCotisationsPatronales + penalite; 
         
         cotisations.push({
-            employeurID: employeur.id,
-            nomEmployeur: employeur.sociale,
-            totalSalairesBruts: totalSalairesBruts,
-            totalCotisationsSalariales: totalCotisationsSalariales,
-            totalCotisationsPatronales: totalCotisationsPatronales,
-            penalite: penalite,
-            montantFinal: montantFinal,
+            id: cotisations.length + 1,
+            tauxPatronalEtSocial: montantFinal,
+            employeurId: employeur.id,
+            sociale: employeur.sociale
         });
     });
 
     afficherCotisations(cotisations);
-    localStorage.setItem('cotisations', JSON.stringify(cotisations));
+    localStorage.setItem('employeurCotisations', JSON.stringify(cotisations));
     return cotisations;
 }
 
@@ -148,13 +157,10 @@ function afficherCotisations(cotisations) {
     cotisations.forEach(cotisation => {
         const tr = document.createElement('tr');
         tr.innerHTML = `
-            <td>${cotisation.employeurID}</td>
-            <td>${cotisation.nomEmployeur}</td>
-            <td>${cotisation.totalSalairesBruts.toFixed(2)}</td>
-            <td>${cotisation.totalCotisationsSalariales.toFixed(2)}</td>
-            <td>${cotisation.totalCotisationsPatronales.toFixed(2)}</td>
-            <td>${cotisation.penalite.toFixed(2)}</td>
-            <td>${cotisation.montantFinal.toFixed(2)}</td>
+            <td>${cotisation.id}</td>
+            <td>${cotisation.sociale}</td>
+            <td>${cotisation.tauxPatronalEtSocial.toFixed(2)}</td>
+            <td>${cotisation.employeurId}</td>
         `;
         tbody.appendChild(tr);
     });
