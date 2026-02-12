@@ -55,9 +55,12 @@
 //   ]),
 // );
 
-// const getDataStorage = (table) => {
-//   return JSON.parse(localStorage.getItem(table));
-// };
+
+
+
+const getDataStorage = (table) => {
+  return JSON.parse(localStorage.getItem(table));
+};
 
 const setDataStorage = (table, data) => {
   return localStorage.setItem(table, JSON.stringify(data));
@@ -65,4 +68,4 @@ const setDataStorage = (table, data) => {
 
 // console.log("Data seeded successfully!");
 
-// export { getDataStorage, setDataStorage };
+export { getDataStorage, setDataStorage };
