@@ -1,5 +1,5 @@
-import { declarations, employees, employeurs } from "../data.js";
-
+//import { declarations, employees, employeurs } from "../data.js";
+import { getDataStorage, setDataStorage } from "../seed.js";
 class Declaration {
   constructor(id, anneeAndmois, dateDeclaration, enRetard, penalité) {
     this.id = id;
@@ -32,9 +32,16 @@ let selectedSocialRaison = "";
 socialSelection.addEventListener("change", (event) => {
   selectedSocialRaison = event.target.value;
 });
-
+ let employeurs ;
+ let employees ;
+ let declarations ;
 // On the program start
 onload = () => buildTable();
+ // Get employeur from local storage.
+  employeurs =   getDataStorage("employeurs");
+  employees =   getDataStorage("employees");
+  declarations =   getDataStorage("declarations");
+
 const buildTable = () => {
   console.log("Start Build");
 
@@ -54,28 +61,6 @@ const buildTable = () => {
   }
 };
 
-const joinEmployeurWithDeclarationForRerenderingTable = () => {
-  employeurs.forEach((employeur) => {
-    declarations.forEach((declaration) => {
-      //let declarationEmployeur = declaration.employeurId == employeur.id;
-      if (declaration.employeurId == employeur.id) {
-        declarationEmployeur = declaration.employeurId;
-        reRenderDeclarationTable(declarationEmployeur, employeur);
-      }
-    });
-  });
-};
-const reRenderDeclarationTable = (declarationEmployeur, employeur) => {
-  let table = `<tr>
-                <td>${employeur.sociale}</td>
-                <td>${declarationEmployeur.anneeMois}</td>
-                <td>${declarationEmployeur.dateDeclaration}</td>
-                <td class="isAjour">À jour</td>
-                <td>1260 DH</td>
-              </tr>`;
-
-  document.querySelector(".employeur_table_data").innerHTML += table;
-};
 
 const addDeclaration = () => {
   // Get employeur which has this ' employeurSelection '
