@@ -21,7 +21,7 @@ employeurCotisations = getData("employeurCotisations");
 employeurs = getData("employeurs");
 employees = getData("employees");
 declarations = getData("declarations");
-console.log(employeurCotisations);
+// console.log(employeurCotisations);
 
 
 function countEmployeurs() {
