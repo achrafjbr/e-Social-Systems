@@ -366,5 +366,7 @@ h1 {
   text-transform: uppercase;
   letter-spacing: 1px;
 }
-
+#cotisationsTable{
+  margin-top: 27px;
+}
 /* end mounir */
