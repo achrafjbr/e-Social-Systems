@@ -43,6 +43,9 @@ const buildTable = () => {
   employeurs = getDataStorage("employeurs");
   employees = getDataStorage("employees");
   declarations = getDataStorage("declarations");
+  if (declarations.length === 0) {
+    return;
+  }
 
   const employeurList = employeurs.map((employeur) => {
     // Get Employeurs and handle their raison social in 'option', and buil the selection element
@@ -160,20 +163,20 @@ const findEmployeurBySociale = (sociale) => {
 };
 
 const calculateThePenalityOfLating = (date, decDate) => {
-    console.log("payDay 11111",date);
-  console.log("decDay111111111",decDate);
+  console.log("payDay 11111", date);
+  console.log("decDay111111111", decDate);
   // Convert input date to js date.
   const payDate = new Date(date);
   const declareDate = new Date(decDate);
 
-  const payDay = payDate.getDay();///
+  const payDay = payDate.getDay(); ///
   const decDay = declareDate.getDay();
-  console.log("payDay",payDay);
-  console.log("decDay",decDay);
+  console.log("payDay", payDay);
+  console.log("decDay", decDay);
 
   const diffTime = Math.abs(declareDate - payDate);
-const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-  
+  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
   return diffDays;
 };
 
@@ -195,8 +198,8 @@ const getDeclaration = (...data) => {
         declaration.dateDeclaration,
         declaration.anneeMois,
       );
-      console.log('Penality', typeof penality);
-      
+      console.log("Penality", typeof penality);
+
       let table = `<tr>
                 <td>${data[1]}</td>
                 <td>${declaration.anneeMois}</td>
