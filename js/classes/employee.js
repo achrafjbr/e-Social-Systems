@@ -1,7 +1,7 @@
 const Ajouter = document.getElementById("Ajouter");
 const tbody = document.getElementById("tbody");
 const Employer = document.getElementById("Employer");
-
+let id;
 
 function getLocalStorage(table) {
   return JSON.parse(localStorage.getItem(table))
@@ -17,15 +17,22 @@ let employeurs = getLocalStorage("employeurs")
 
 
 // 🔹 نعرضو data القديمة
-employees.forEach(emp => {
-  const tr = document.createElement("tr");
-  tr.innerHTML = `
+if (employees) {
+  employees.forEach(emp => {
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
     <td>${emp.nomPrenom}</td>
     <td>${emp.salaire}</td>
     <td>${emp.employeurId}</td>
   `;
-  tbody.appendChild(tr);
-});
+    tbody.appendChild(tr);
+  });
+  id = employees.length + 1;
+} else {
+  stock = [];
+  id = 1;
+}
+
 
 Ajouter.addEventListener("click", function (e) {
   e.preventDefault();
@@ -50,7 +57,7 @@ Ajouter.addEventListener("click", function (e) {
 
   // 🔹 1. نصايبو object
   const employee = {
-    id: employees.length + 1,
+    id: id,
     nomPrenom: Nom,
     salaire: Salaire,
     employeurId: Employer

@@ -114,6 +114,7 @@ function RecentDeclarations() {
     DeclarationRec.innerHTML = "";
     let sector;
     let salaire;
+    if (declarations) {
     declarations.forEach((declaration, index) => {
         sector = EmplouerSectuer(declaration.employeurId);
         salaire = SalaireEmpDec(declaration.employeurId);
@@ -130,6 +131,9 @@ function RecentDeclarations() {
                   </div>
         `;
   });
+    } else {
+        DeclarationRec.innerHTML = `<p class="text-sm text-gray-600">Aucune déclaration récente</p>`;
+    }
 }
 
 
