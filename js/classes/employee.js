@@ -3,10 +3,6 @@ const tbody = document.getElementById("tbody");
 const Employer = document.getElementById("Employer");
 
 
-
-
-
-
 function getLocalStorage(table) {
   return JSON.parse(localStorage.getItem(table))
 }
@@ -36,11 +32,11 @@ Ajouter.addEventListener("click", function (e) {
 
 
   const Nom = document.getElementById("Nom").value;
-  const Salaire = document.getElementById("Salaire").value;
+  const Salaire = parseFloat(document.getElementById("Salaire").value);
   const Employer = document.getElementById("Employer").value;
 
 
-  if (Nom === "" || Salaire === "" || Employer === "") {
+  if (Nom === "" || isNaN(Salaire) || Employer === "") {
     alert("Veuillez remplir tous les champs");
     return;
   }
