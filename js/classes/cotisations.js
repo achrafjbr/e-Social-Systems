@@ -26,19 +26,16 @@ function genererCotisations(employeurs, employees, declarations) {
             totalCotisationsPatronales += cotisationPatronale;
         });
 
-        const date1 = new Date(declaration.anneeMois);
-        const date2 = new Date(declaration.dateDeclaration);
-        
-        let payDay = date1.getDay()
-        let decDay = date2.getDay()
+        const anneeMois = new Date(declaration.anneeMois);
+        const dateDeclaration = new Date(declaration.dateDeclaration);
 
-        let diff = (payDay - decDay)
-        alert(diff)
+        const diffMs = dateDeclaration - anneeMois;
+        const diffDays = diffMs / (1000 * 60 * 60 * 24);
         
 
-        const penalite =  declaration * totalSalairesBruts * TAUX_PENALITE;
-        const montantFinal = totalCotisationsSalariales + totalCotisationsPatronales + penalite; 
-        
+        const penalite =  diffDays * totalSalairesBruts * TAUX_PENALITE;
+        const montantFinal = (totalCotisationsSalariales + totalCotisationsPatronales + penalite).toFixed(2); 
+        alert(montantFinal)
 
         cotisations.push({
             id: cotisations.length + 1,
