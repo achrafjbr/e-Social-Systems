@@ -102,7 +102,8 @@ body {
   justify-content: space-between;
 }
 .search-icon {
-  font-size: 20px;
+  font-size: 15px;
+  padding: 5px;
   cursor: pointer;
 }
 .serchelement {
@@ -112,14 +113,14 @@ body {
 
 .insearch {
   width: 200px;
-  height: 20px;
+  height: 30px;
   border-radius: 5px;
-  background-color: #1d4ed8;
-  border: #0062ff 1px solid;
-  color: #ffffff;
+  background-color: #eff6ff;
+  border: none;
+  color: #333;
 }
 .screen.assures h1 {
-  font-size: 17;
+  font-size: 15;
   color: #1d4ed8;
   display: flex;
   justify-content: center;
@@ -142,40 +143,54 @@ body {
   padding: 20px;
 }
 .Ajoute h2 {
+  border-bottom: 1px solid #d2cccc;
+  margin-bottom: 20px;
+  font-weight: 500;
   text-align: center;
   color: #000000;
-  font-size: 18px;
+  font-size: 25px;
 }
 .Ajoute input {
+
+  border-radius: 7px;
+  border: none;
+  height: 40px;
+  font-size: 14px;
+
   border: #000000 1px solid;
   border-radius: 8px;
-<<<<<<< HEAD
-=======
   height: 26px;
   box-shadow: #000000 1px 1px 2px;
 }
 .Ajoute label {
-  font-size: 13px;
-  font-family: "Times New Roman", Times, serif;
+  font-size: 19px;
 }
 #Ajouter {
-  font-size: 14px;
-  color: rgb(255, 255, 255);
-  height: 25px;
-  border: #1d4ed8 1px solid;
-  background: #1d4ed8;
-  border-radius: 8px;
+  margin-top: 10px;
+  background-color: #1d4ed8;
+  border: 1px solid rgb(208, 224, 245);
+  color: white ;
+  height: 40px;
+  border-radius: 6px;
+  font-size: 16px;
   cursor: pointer;
-  box-shadow: 1px 1px 2px #000000;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgb(238, 236, 236, 0.619);
+}
+#Ajouter:hover{
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+#Ajouter:active {
+  transform: translateY(0);
+  opacity: 0.9;
 }
 #Employer{
   border:#000000 1px solid;
   border-radius: 8px;
->>>>>>> origin
   height: 26px;
   box-shadow: #000000 1px 1px 2px;
 }
-<<<<<<< HEAD
 .Ajoute label {
   font-size: 13px;
   font-family: "Times New Roman", Times, serif;
@@ -190,8 +205,6 @@ body {
   cursor: pointer;
   box-shadow: 1px 1px 2px #000000;
 }
-=======
->>>>>>> origin
 /* for table */
 .Liste h2 {
   text-align: center;
@@ -220,8 +233,8 @@ table td {
   border: none;
 }
 .hedertab {
-  background: #1d4ed8;
-  color: #eff6ff;
+  background: #eff6ff;
+  color: black;
   border: none;
 }
 .screens .screen.activated {
@@ -328,150 +341,6 @@ table td {
     background-color: #dcfce7;
   }
 }
-<<<<<<< HEAD
-=======
-/*--hiba start css--*/
-.form-title {
-  border-bottom: 1px solid #d2cccc;
-  margin-bottom: 20px;
-  text-align: center;
-  font-size: 25px;
-  font-weight: 500;
-}
-.employeur {
-  display: flex;
-  gap: 33px;
-  width: 100%;
-}
-.left {
-  background-color: #eff6ff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgb(215, 223, 248);
-  padding: 20px;
-  width: 26%;
-}
-label {
-  color: #333;
-  font-size: 19px;
-}
-input {
-  border-radius: 7px;
-  border: none;
-  padding: 8px;
-  height: 40px;
-  width: 100%;
-  font-size: 14px;
-}
-.left form input {
-  margin-bottom: 10px;
-  margin-top: 10px;
-}
-.btn {
-  margin-top: 10px;
-  background-color: #1d4ed8;
-  border: 1px solid rgb(208, 224, 245);
-  color: white;
-  height: 40px;
-  width: 100%;
-  border-radius: 6px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 8px rgba(238, 236, 236, 0.619);
-}
-.btn:hover {
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  transform: translateY(-2px);
-}
-.btn:active {
-  transform: translateY(0);
-  opacity: 0.9;
-}
-.right {
-  width: 72%;
-}
-.table-title {
-  margin-bottom: 1.4rem;
-  font-size: 25px;
-  font-weight: 500;
-  margin-bottom: 20px;
-}
-table {
-  background-color: whitesmoke;
-  border-radius: 10px;
-  width: 100%;
-  border-collapse: collapse;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(166, 205, 227, 0.1);
-}
-thead {
-  background-color: #eff6ff;
-  color: #333;
-}
-th {
-  text-align: center;
-  font-size: 20px;
-  padding: 20px;
-  font-weight: 500;
-}
-tbody tr {
-  border-bottom: 1px solid #e0e0e0;
-  transition: background-color 0.2s ease;
-}
-tbody tr:hover {
-  background-color: #eef1f4;
-}
-tbody tr:last-child {
-  border-bottom: none;
-}
-tbody tr:nth-child(even) {
-  background-color: fafafa;
-}
-td {
-  padding: 17px 24px;
-  color: #333;
-  text-align: center;
-}
-
-/*-- Pop-up for declaration: when the user declare two times in the same month the popup will trigger  --*/
-
-.pop_up {
-  width: 25%;
-  height: 10%;
-  padding: 0.5rem;
-  position: fixed;
-  right: 10px;
-  bottom: 10px;
-  color: white;
-  transform: translateX(-25%);
-  transition: transform 0.4s linear;
-  border-radius: 10px;
-  z-index: 111;
-  opacity: 0.7;
-}
-
-.pop_up.showen {
-  display: block;
-  transform: translateX(0);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.pop_up.hidden {
-  display: none;
-  transform: translateX(0);
-}
-
-.pop_up.success {
-  background: var(--pop-up-success-color);
-}
-
-.pop_up.failur {
-  background: var(--pop-up-failur-color);
-}
-
-/*--hiba end css--*/
->>>>>>> origin
 
 /* start abderrahman  */
 .no-scrollbar {
@@ -497,5 +366,7 @@ h1 {
   text-transform: uppercase;
   letter-spacing: 1px;
 }
-
+#cotisationsTable{
+  margin-top: 27px;
+}
 /* end mounir */

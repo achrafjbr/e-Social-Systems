@@ -63,26 +63,26 @@ function EmployeurCotisationsCount(id) {
       count += Cotisations.tauxPatronalEtSocial;
     }
   });
-  return count;
+  return Number(count);
 }
 
 function EmplouerSectuer(id) {
-    let sector;
-    employeurs.forEach((employeur, index) => {
-        if (employeur.id == id) {
-            sector = employeur.sociale
-        }
-    });
-    return sector;
+  let sector;
+  employeurs.forEach((employeur, index) => {
+    if (employeur.id == id) {
+      sector = employeur.sociale;
+    }
+  });
+  return sector;
 }
 function SalaireEmpDec(id) {
-    let salaire = 0;
-    employees.forEach((employee, index) => {
-        if (employee.employeurId == id) {
-            salaire += employee.salaire;
-        }
-    });
-    return salaire;
+  let salaire = 0;
+  employees.forEach((employee, index) => {
+    if (employee.employeurId == id) {
+      salaire += employee.salaire;
+    }
+  });
+  return salaire;
 }
 
 function RepEmpSecteurs() {
@@ -111,13 +111,14 @@ function RepEmpSecteurs() {
 }
 
 function RecentDeclarations() {
-    DeclarationRec.innerHTML = "";
-    let sector;
-    let salaire;
+  DeclarationRec.innerHTML = "";
+  let sector;
+  let salaire;
+  if (declarations) {
     declarations.forEach((declaration, index) => {
-        sector = EmplouerSectuer(declaration.employeurId);
-        salaire = SalaireEmpDec(declaration.employeurId);
-        DeclarationRec.innerHTML += `
+      sector = EmplouerSectuer(declaration.employeurId);
+      salaire = SalaireEmpDec(declaration.employeurId);
+      DeclarationRec.innerHTML += `
             <div class="flex items-center justify-between p-3 hover:bg-gray-50 rounded-lg">
                     <div>
                       <h5 class="font-medium text-gray-800">${sector}</h5>
@@ -129,14 +130,15 @@ function RecentDeclarations() {
                     </div>
                   </div>
         `;
-  });
+    });
+  } else {
+    DeclarationRec.innerHTML = `<p class="text-sm text-gray-600">Aucune déclaration récente</p>`;
+  }
 }
 
-
-RepEmpSecteurs()
-RecentDeclarations()
+RepEmpSecteurs();
+RecentDeclarations();
 SalaireMoyen.textContent = SalaireMoyene().toFixed(2);
 EmpEnergCount.textContent = countEmployeurs();
 employeesCount.textContent = countEmployees();
 Cotisationstotales.textContent = employeurCotisationsTotal().toFixed(2);
-

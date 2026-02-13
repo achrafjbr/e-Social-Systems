@@ -1,117 +1,7 @@
-// const employeurs = JSON.parse(localStorage.getItem('employeurs')) || [];
-// const employees = JSON.parse(localStorage.getItem('employees')) || [];
-// const declarations = JSON.parse(localStorage.getItem('declarations')) || [];
+const employeurs = JSON.parse(localStorage.getItem('employeurs')) || [];
+const employees = JSON.parse(localStorage.getItem('employees')) || [];
+const declarations = JSON.parse(localStorage.getItem('declarations')) || [];
 
-const Sector = {
-  COMMERCE: "Commerce",
-  HEBERGEMENT: "Hébergement",
-  CONSTRUCTION: "Construction",
-  ENSEIGNEMENT: "Enseignement",
-  SANTE: "Santé"
-};
-
-let employeurs = [
-  {
-    id: 1,
-    sociale: "Tech tache",
-    sector: Sector.COMMERCE,
-  },
-  {
-    id: 2,
-    sociale: "Heber",
-    sector: Sector.HEBERGEMENT,
-  },
-  {
-    id: 3,
-    sociale: "Build-SET",
-    sector: Sector.CONSTRUCTION,
-  },
-  {
-    id: 4,
-    sociale: "Educt",
-    sector: Sector.ENSEIGNEMENT,
-  },
-  {
-    id: 5,
-    sociale: "SanFran",
-    sector: Sector.SANTE,
-  },
-];
-
-let employees = [
-  {
-    id: 1,
-    nomPrenom: "Kamal nasim",
-    salaire: 10000,
-    employeurId: 2,
-  },
-  {
-    id: 2,
-    nomPrenom: "Ahmed nori",
-    salaire: 15000,
-    employeurId: 2,
-  },
-  {
-    id: 3,
-    nomPrenom: "Samir salhi",
-    salaire: 5000,
-    employeurId: 1,
-  },
-  {
-    id: 4,
-    nomPrenom: "Noura ahmed",
-    salaire: 2700,
-    employeurId: 3,
-  },
-  {
-    id: 5,
-    nomPrenom: "Samira jalal",
-    salaire: 2700,
-    employeurId: 4,
-  },
-  {
-    id: 6,
-    nomPrenom: "khdija lara",
-    salaire: 2700,
-    employeurId: 1,
-  },
-];
-
-// Added joursRetard property based on the dates
-let declarations = [
-  {
-    id: 1,
-    anneeMois: "02/03/2025",
-    dateDeclaration: "05/03/2025",
-    penalité: 30,
-    employeurId: 1,
-    joursRetard: 2,
-  },
-  {
-    id: 2,
-    anneeMois: "02/03/2025",
-    dateDeclaration: "06/03/2025",
-    penalité: 0,
-    employeurId: 2,
-    joursRetard: 0,
-  },
-  {
-    id: 3,
-    anneeMois: "02/03/2025",
-    dateDeclaration: "07/03/2025",
-    penalité: 15,
-    employeurId: 3,
-    joursRetard: 4,
-  },
-  {
-    id: 4,
-    anneeMois: "02/03/2025",
-    dateDeclaration: "05/03/2025",
-    penalité: 0,
-    employeurId: 4,
-    joursRetard: 2,
-  },
-];
 
 const PLAFOND = 6000;
 const TAUX_SALARIAL = 0.07;
@@ -136,9 +26,16 @@ function genererCotisations(employeurs, employees, declarations) {
             totalCotisationsPatronales += cotisationPatronale;
         });
 
-        const penalite = declaration.joursRetard * totalSalairesBruts * TAUX_PENALITE;
-        const montantFinal = totalCotisationsSalariales + totalCotisationsPatronales + penalite; 
+        const anneeMois = new Date(declaration.anneeMois);
+        const dateDeclaration = new Date(declaration.dateDeclaration);
+
+        const diffMs = dateDeclaration - anneeMois;
+        const diffDays = diffMs / (1000 * 60 * 60 * 24);
         
+
+        const penalite =  diffDays * totalSalairesBruts * TAUX_PENALITE;
+        const montantFinal = (totalCotisationsSalariales + totalCotisationsPatronales + penalite).toFixed(2); 
+
         cotisations.push({
             id: cotisations.length + 1,
             tauxPatronalEtSocial: montantFinal,
@@ -159,7 +56,7 @@ function afficherCotisations(cotisations) {
         tr.innerHTML = `
             <td>${cotisation.id}</td>
             <td>${cotisation.sociale}</td>
-            <td>${cotisation.tauxPatronalEtSocial.toFixed(2)}</td>
+            <td>${cotisation.tauxPatronalEtSocial}</td>
             <td>${cotisation.employeurId}</td>
         `;
         tbody.appendChild(tr);
