@@ -32,7 +32,7 @@ function countEmployees() {
 function employeurCotisationsTotal() {
   total = 0;
   employeurCotisations.forEach((cotisation) => {
-    total += cotisation.tauxPatronalEtSocial;
+    total += Number(cotisation.tauxPatronalEtSocial);
   });
   // console.log(total)
   return total;
@@ -60,7 +60,7 @@ function EmployeurCotisationsCount(id) {
   let count = 0;
   employeurCotisations.forEach((Cotisations, index) => {
     if (Cotisations.employeurId == id) {
-      count += Cotisations.tauxPatronalEtSocial;
+      count = Number(count) + Number(Cotisations.tauxPatronalEtSocial);
     }
   });
   return Number(count);
