@@ -35,7 +35,6 @@ function genererCotisations(employeurs, employees, declarations) {
 
         const penalite =  diffDays * totalSalairesBruts * TAUX_PENALITE;
         const montantFinal = (totalCotisationsSalariales + totalCotisationsPatronales + penalite).toFixed(2); 
-        alert(montantFinal)
 
         cotisations.push({
             id: cotisations.length + 1,
